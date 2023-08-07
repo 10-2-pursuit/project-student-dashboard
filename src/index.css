@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    color: white;
+    background-color: rgb(44, 147, 7);
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 2rem;
+    padding-top: 15px;
+    text-align: center;
+    background-color: rgb(44, 147, 7);
+}
