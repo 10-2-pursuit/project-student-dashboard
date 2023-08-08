@@ -4,8 +4,8 @@ import Year from './Year';
 
 const Years = ({studentsData}) => {
 
-    let yearList = Array.from(new Set(studentsData.map((student) => 
-    student.cohort.cohortCode)))
+    let yearList = [ "All Students" , ...Array.from(new Set(studentsData.map((student) => 
+    student.cohort.cohortCode)))]
         
 
     console.log(yearList)
