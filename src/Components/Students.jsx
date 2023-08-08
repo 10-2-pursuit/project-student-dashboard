@@ -1,9 +1,11 @@
 import React from 'react';
+import Student from './Student';
 
-const Students = () => {
+const Students = (studentsData) => {
+    // studentsData.map(() => {})
     return (
         <div className='Students'>
-            <span>studentsTest</span>
+            <Student/>
         </div>
     );
 }

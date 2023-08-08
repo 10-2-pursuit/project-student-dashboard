@@ -5,13 +5,13 @@
 
 #root {
     display: grid;
-    grid-template-areas: "a a a"
-                         "b c c"
-                         "b c c"  ;
+    grid-template-columns: 33vw 67vw ;
+    grid-template-rows: 20vh 80vh;
 }
 
 .Header {
-    grid-area: a;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 1;
     text-align: center;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -25,13 +25,16 @@
 /* CSS for Years and sub-components/elements */
 
 .Years {
-    grid-area: b;
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
     background-color: aliceblue;
-    /* max-height: 60vh; */
-    height: 500px;
+    height: 80vh;
+    max-height: 80vh;
     font-family: sans-serif;
     padding-left: 20px;
     padding: 20px;
+    width: 300px;
+    overflow:visible
 }
 
 .Years h4 {
@@ -40,12 +43,19 @@
 
 .Year {
     border-bottom: 1px solid var(--customGreen);
-    /* border: solid; */
+    display: flex;
+    align-items: center;
+}
+
+.Year:hover {
+    transition: 250ms;
+    background-color: gray;
 }
 
 
 /* CSS for Students and sub-components/elements */
 .Students {
-    grid-area: c;
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 3;
     background-color: lightgray;
 }
