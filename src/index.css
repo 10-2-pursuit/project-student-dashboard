@@ -1,0 +1,8 @@
+.studentCard {
+    width: 70%;
+    min-height: 360px;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 10px;
+    padding: 1em;
+    box-sizing: border-box;
+}
