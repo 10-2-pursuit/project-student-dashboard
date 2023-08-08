@@ -59,3 +59,22 @@
     grid-column: 2 / span 3;
     background-color: lightgray;
 }
+
+.Student {
+    border: 2px solid var(--customGreen);
+    padding: 10px;
+    margin: 10px;
+}
+
+.Student img{
+    transition: 250ms;
+    width: 100px;
+    padding: 10px;
+    border-radius: 15px;
+ }
+
+ .Student img:hover {
+    width: 200px;
+    transition: 250ms;
+    border-radius: 100px;
+ }

@@ -8,7 +8,7 @@ const Years = ({studentsData}) => {
     student.cohort.cohortCode)))]
         
 
-    console.log(yearList)
+    // console.log(yearList)
     // console.log(studentsData[0].cohort.cohortCode)
 
     return (

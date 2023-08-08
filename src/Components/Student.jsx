@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Student = () => {
+const Student = ({student}) => {
     return (
-        <div>
+        <div className='Student'>
+            <img src={student.profilePhoto} alt="" />
             <span>spooky</span>
         </div>
     );

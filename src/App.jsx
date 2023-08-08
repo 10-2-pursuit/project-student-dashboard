@@ -9,7 +9,7 @@ import studentsData from "./data/data.json"
 
 function App() {
 
-  const [Cohort, setCohort] = useState("")
+  const [Cohort, setCohort] = useState("All Students")
 
   const updateCohort = (newCohort) => {
     setCohort(newCohort)
@@ -19,7 +19,9 @@ function App() {
   <>
     <Header/>
     <Years studentsData={studentsData}/>
-    <Students studentsData={studentsData}/>
+    <Students 
+      studentsData={studentsData} 
+      selectedCohort={Cohort} />
   </>
   );
 }
