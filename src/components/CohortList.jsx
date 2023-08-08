@@ -12,7 +12,7 @@ export default function CohortList({cohortList, setStudentList, data}){
             setStudentList(tempList);
         }
         else{
-            setStudentList(data);
+            setStudentList([...data]);
         }
     }
 
@@ -20,7 +20,6 @@ export default function CohortList({cohortList, setStudentList, data}){
         <ul>
             {cohortList.map((cohort)=>{
                 return(
-
                     <li key={cohort} onClick={()=>studentListHandler(cohort)}>{cohort}</li>
                 )
             })}

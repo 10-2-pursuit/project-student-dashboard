@@ -1,7 +1,7 @@
 import StudentList from "./components/StudentList";
 import data from './data/data.json';
 import CohortList from "./components/CohortList";
-import { useEffect, useReducer, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [cohortList, setCohortList] = useState(cohortListGenerator());
@@ -21,6 +21,7 @@ function App() {
   return (
     <div>
       <h1>Student Dashboard</h1>
+      <p>Total students: {studentList.length}</p>
       <CohortList cohortList={ cohortList } setStudentList={ setStudentList } data={data}/>
       <StudentList studentList={ studentList }/>
     </div>

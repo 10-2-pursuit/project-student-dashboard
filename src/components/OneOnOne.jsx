@@ -1,14 +1,14 @@
 export default function OneOnOne({comments, setComments, studentId}){
     function updateComments(e){
-        console.log(e.target.id);
         const form = document.getElementById(e.target.id);
-        console.log(form.comment.value)
         setComments([...comments, {[`${form.writer.value}`]:form.comment.value}]);
+        form.reset();
     }
 
     function submitHandler(e){
         e.preventDefault();
         updateComments(e);
+
     }
 
     return (

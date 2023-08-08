@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import StudentDetail from "./StudentDetail";
 
 export default function Student({ student }){
-    const [ showDetail, setShowDetail ] = useState(false);
+    const [showDetail, setShowDetail] = useState(false);
     const [comments, setComments] = useState([]);
     
     function detailHandler(){
         setShowDetail(!showDetail);
     }
+
     return(
         <div id={student.id} className="studentCard">
             <img src={ student.profilePhoto} />
