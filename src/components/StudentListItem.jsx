@@ -3,7 +3,7 @@ export default function StudentListItem({ student }) {
 
   return (
     <div className="student">
-      <img src={student.profilePhoto} />
+      <img src={student.profilePhoto} alt="student" />
       <h3>{studentName}</h3>
       <span>{student.username}</span>
       <br></br>

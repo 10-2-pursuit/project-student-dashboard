@@ -1,0 +1,43 @@
+.pageLayout {
+    height: 100vh;
+    width: 100vw;
+    grid-template-areas: "header header header"
+        "cohorts students students";
+    display: grid;
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+    font-size:x-large;
+    margin: 0px;
+    padding: 25px;
+    background-color: aquamarine;
+}
+
+.studentList {
+    grid-area: students;
+    display: grid;
+}
+
+.cohortList {
+    grid-area: cohorts;
+}
+
+.student {
+    display: flex;
+    width: 350px;
+    height: 200px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid teal;
+    padding: 5px;
+}
+
+.student img {
+    width: 100px;
+    ;
+}
+
