@@ -3,7 +3,7 @@ import StudentDetail from "./StudentDetail";
 
 export default function Student({ student }){
     const [ showDetail, setShowDetail ] = useState(false);
-    const [comments, setComments] = useState([{writer:"",comment:""}]);
+    const [comments, setComments] = useState([]);
     
     function detailHandler(){
         setShowDetail(!showDetail);
