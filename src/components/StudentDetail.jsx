@@ -1,4 +1,14 @@
-export default function StudentDetail({codewars, certifications, cohort}){
+import { useState } from "react";
+import OneOnOne from "./OneOnOne";
+
+export default function StudentDetail({codewars, certifications, cohort, comments, setComments, studentId}){
+    const [toggleDetail, setToggleDetail] = useState(false);
+    
+
+    function toggleDetailHandler(){
+        setToggleDetail(!toggleDetail);
+    }
+
     return(
         <div className="detail">
             <ul>
@@ -21,6 +31,14 @@ export default function StudentDetail({codewars, certifications, cohort}){
                 <li>Github: {certifications.github ? "✅" : "❌"}</li>
                 <li>Mock Interview: {certifications.mockInterview ? "✅" : "❌"}</li>
             </ul>
+            <span onClick={()=>toggleDetailHandler()}>{toggleDetail ? (<>Show 1:1</>) : (<>Hide 1:1</>)}</span>
+            {toggleDetail ? (<>
+                                <p>{comments.map((cmt,index)=>{ return(
+                                <span>{cmt.id} says {cmt.comment}{console.log(cmt.length)}</span>
+                            )})}</p>
+                                <OneOnOne comments={comments} setComments={setComments} studentId={studentId}/>
+                            </>) : null}
+
         </div>
     )
 }

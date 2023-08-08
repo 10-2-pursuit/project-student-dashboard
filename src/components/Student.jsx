@@ -3,6 +3,7 @@ import StudentDetail from "./StudentDetail";
 
 export default function Student({ student }){
     const [ showDetail, setShowDetail ] = useState(false);
+    const [comments, setComments] = useState([{writer:"",comment:""}]);
     
     function detailHandler(){
         setShowDetail(!showDetail);
@@ -19,7 +20,7 @@ export default function Student({ student }){
             <span>{ student.dob }</span><br />
             <span>{showDetail ? (<span onClick={()=>detailHandler()}>Show less</span>) : (<span onClick={()=>detailHandler()}>Show more</span>)}</span>
             <>
-                {showDetail ? <StudentDetail codewars={ student.codewars } certifications={ student.certifications } cohort={ student.cohort } /> : null}
+                {showDetail ? <StudentDetail codewars={ student.codewars } certifications={ student.certifications } cohort={ student.cohort } comments={comments} setComments={ setComments } studentId={ student.id }/> : null}
             </>
         </div>
     )
