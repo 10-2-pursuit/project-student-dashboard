@@ -35,7 +35,7 @@ export default function StudentDetail({codewars, certifications, cohort, comment
             <span onClick={()=>toggleDetailHandler()}>{toggleDetail ? (<>Hide 1:1</>) : (<>Show 1:1</>)}</span>
             {toggleDetail ? (<>
                                 <p>{comments.map((cmt,index)=>{ return(
-                                <><span>{Object.keys(cmt)[0]} says {cmt[Object.keys(cmt)[0]]}{console.log(cmt.length)}</span><br /></>
+                                <><span>{Object.keys(cmt)[0]} says {cmt[Object.keys(cmt)[0]]}</span><br /></>
                             )})}</p>
                                 <OneOnOne comments={comments} setComments={setComments} studentId={studentId}/>
                             </>) : null}
