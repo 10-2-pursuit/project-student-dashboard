@@ -1,5 +1,3 @@
-const studentData =
-
 [
   {
     "id": "D8-hEWB",
@@ -6756,6 +6754,6 @@ const studentData =
       "scores": { "assignments": 0.93, "projects": 0.85, "assessments": 0.8 }
     }
   }
-];
-export default studentData;
+]
+
 
