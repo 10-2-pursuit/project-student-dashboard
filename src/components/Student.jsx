@@ -3,6 +3,7 @@ import StudentDetail from "./StudentDetail";
 
 export default function Student({ student }){
     const [ showDetail, setShowDetail ] = useState(false);
+    
     function detailHandler(){
         setShowDetail(!showDetail);
     }

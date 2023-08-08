@@ -4,7 +4,7 @@ export default function StudentList({ studentList }){
         <ul>
             {studentList.map((student, index)=>{
                 return (
-                    <li key={ index }>
+                    <li key={ index }>{index}
                         <Student student={ student } />
                     </li>
                 )

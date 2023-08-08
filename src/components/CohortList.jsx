@@ -1,16 +1,18 @@
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 
-export default function CohortList({cohortList, studentList, setStudentList, resetStudentList}){
+export default function CohortList({cohortList, setStudentList, data}){
 
-    function studentListHandler(filterValue){
-        console.log(filterValue);
-        resetStudentList();
+    function studentListHandler(cohort){
+        updateCohortList(cohort)
+    }
+
+    function updateCohortList(filterValue){        
         if(filterValue !== "all"){
-            console.log(studentList);
-            const tempList = studentList.filter((student)=>student.cohort.cohortCode === filterValue);
-            console.log(tempList);
+            const tempList = data.filter((student)=>student.cohort.cohortCode === filterValue);
             setStudentList(tempList);
-            console.log(tempList);
+        }
+        else{
+            setStudentList(data);
         }
     }
 
@@ -18,6 +20,7 @@ export default function CohortList({cohortList, studentList, setStudentList, res
         <ul>
             {cohortList.map((cohort)=>{
                 return(
+
                     <li key={cohort} onClick={()=>studentListHandler(cohort)}>{cohort}</li>
                 )
             })}
