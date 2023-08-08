@@ -10,9 +10,9 @@ export default function StudentDetail({codewars, certifications, cohort}){
             </ul>
             <ul>
                 <h5>Scores</h5>
-                <li>Assignments: {Number(cohort.scores.assignments * 100).toFixed(2)}%</li>
-                <li>Projects: {Number(cohort.scores.projects * 100).toFixed(2)}%</li>
-                <li>Assessments: {Number(cohort.scores.assessments * 100).toFixed(2)}%</li>
+                <li>Assignments: { cohort.scores.assignments * 100 }%</li>
+                <li>Projects: { cohort.scores.projects * 100 }%</li>
+                <li>Assessments: { cohort.scores.assessments * 100}%</li>
             </ul>
             <ul>
                 <h5>Certifications</h5>

@@ -1,9 +1,8 @@
-import data from '../data/data.json';
 import Student from './Student';
-export default function StudentList(){
+export default function StudentList({ studentList }){
     return (
         <ul>
-            {data.map((student, index)=>{
+            {studentList.map((student, index)=>{
                 return (
                     <li key={ index }>
                         <Student student={ student } />
