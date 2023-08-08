@@ -2,8 +2,8 @@ import React from 'react';
 
 const Students = () => {
     return (
-        <div>
-            
+        <div className='Students'>
+            <span>studentsTest</span>
         </div>
     );
 }
