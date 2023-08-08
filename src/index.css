@@ -13,13 +13,19 @@
     color: white;
     background-color: rgb(160, 188, 105);
     display: flex;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
+    max-height: 20vh;
 }
 
 .Years {
     grid-area: b;
+    background-color: aliceblue;
+    /* max-height: 60vh; */
+    height: 500px;
+
 }
 
 .Students {
     grid-area: c;
+    background-color: lightgray;
 }
