@@ -1,9 +1,15 @@
 
 
-export default function CohortList(cohorts) {
+export default function CohortList({ cohorts, students }) {
+
+    // function createCohorts(students) {
+    //     students.map((student) => )
+    // }
+
     return (
         <div className="cohortList">
-            <h2>Cohort List</h2>
+            <h2>Choose a Class by Start Date</h2>
+            
         </div>
     )
 }
