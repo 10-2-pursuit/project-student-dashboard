@@ -10,7 +10,7 @@ const StudentList =  ({students, onSelectStudent}) => {
             <p>Name: {student.names.preferredName}</p>
             <button onClick={() => onSelectStudent(student)}>Show Details</button>
       </div>
-      ))}
+      ))}ea
       </div>
     );
         };
