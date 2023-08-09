@@ -1,7 +1,17 @@
 import React from 'react';
 
 const StudentDetails = ({student}) => {
+const [viewMore, setViewMore]= useState(false);
+
+const toggleView = () => {
+    setViewMore(!viewMore);
+};
+
 const isOnTrack = student.certifications.resume && student.certifications.linkedin && student.certifications.github && student.certifications.mockInterview && student.codewars.current.total > 600; 
+
+const assignmentsPercentage = student.cohort.score.assignments * 100;
+const projectPercentage = 
+
 
     return (
         <div className="student-details">
