@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import students from "../data/data.json";
 import StudentCard from "./StudentCard";
 
@@ -16,11 +16,21 @@ const ClassOfStudents = () => {
     return groupedByCohort[cohortCode].push(student);
   });
 
+    const [expanedCohorts, setExpanedCohorts] = useState({})
+
+    const toggleCohort = (cohortCode) => {
+        setExpanedCohorts((prevState) => ({
+            ...prevState, [cohortCode]: !prevState[cohortCode],
+        }));
+    };
+
   return (
     <div>
       {Object.entries(groupedByCohort).map(([cohortCode, students]) => (
         <div key={cohortCode}>
-          <h3>{cohortCode}</h3>
+          <h3 onClick={() => toggleCohort(cohortCode)}>{cohortCode} {expanedCohorts[cohortCode]? "▼" : "▶️"}
+          </h3>
+          {expanedCohorts[cohortCode] && (
           <ul>
             {students.map((student, index) => (
               <li key={index}>
@@ -28,6 +38,7 @@ const ClassOfStudents = () => {
               </li>
             ))}
           </ul>
+          )}
         </div>
       ))}
     </div>
