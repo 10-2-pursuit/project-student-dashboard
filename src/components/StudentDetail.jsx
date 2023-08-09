@@ -12,7 +12,7 @@ export default function StudentDetail({codewars, certifications, cohort, comment
     return(
         <div className="detail">
             <div className="track">
-                <p>{track ? (<span>On track</span>) : (<span>Off track</span>)}</p>
+                <p>{track ? (<span className="on_track">On track</span>) : (<span className="off_track">Off track</span>)}</p>
             </div>
             <div className="certifications_and_score">
                 <ul>

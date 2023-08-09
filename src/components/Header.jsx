@@ -10,12 +10,13 @@ export default function Header({cohortList, setStudentList, data}){
 
     return(
         <header>
-            <h1>Dashboard Project</h1>
+            <div className='header'>
+                <h1>Dashboard Project</h1>
+            </div>
             <div className="menu">
                 <span onClick={()=> onClickEventHandler()}>☰</span>
                 {toggleHamburger ? (<CohortList cohortList={ cohortList } setStudentList={ setStudentList } data={data}/>) : null}
             </div>
-
         </header>
     )
 }

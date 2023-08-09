@@ -31,6 +31,28 @@ header {
     background-color: cadetblue;
 }
 
+.menu {
+    position:fixed;
+    top:0%;
+    left:0%;
+    background-color: darkslategray;
+    font-size: 4em;
+    color: whitesmoke;
+}
+
+.cohort_list {
+    font-size: 14px;
+}
+
+.cohort_list ul {
+    list-style: none;
+}
+
+.header {
+    width: 100vmax;
+    text-align: center;
+}
+
 main {
     grid-area: b;
 }
@@ -62,4 +84,13 @@ main {
 
 ul {
     list-style: none;
+}
+
+.on_track {
+    color:green;
+}
+
+.off_track {
+    color: red;
+    font-weight: bolder;
 }
