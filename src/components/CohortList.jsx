@@ -27,11 +27,10 @@ export default function CohortList({cohortList, setStudentList, data}){
                 </ul>
             </div>
             <div className="dark_mode">
-                <input
-                    type="checkbox"                                
-                    icons={{ checked: "🌙", unchecked: "🔆" }}
-                    aria-label="Dark mode toggle"
-                />
+                <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider round"></span>
+                </label>
             </div>
         </>
         
