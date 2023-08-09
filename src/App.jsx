@@ -5,12 +5,16 @@ import StudentList from "./components/StudentList";
 import ClassOfStudents from "./components/ClassOfStudents";
 
 function App() {
-console.log(<ClassOfStudents />)
+
+  const [selectedCohort, setSelectedCohort] = useState(null)
+
   return (
     <div>
       <header>Student Dashboard</header>
-      <StudentList students={students}/>
-      <ClassOfStudents  />
+      <div>
+        <h3 onClick={() => setSelectedCohort(null)}>All Students</h3>
+      </div>
+      {selectedCohort ? ( <ClassOfStudents  selectedCohort={selectedCohort} /> ) : ( <StudentList students={students}/> )}
     </div>
   );
 }

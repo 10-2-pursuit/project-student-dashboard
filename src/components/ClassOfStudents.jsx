@@ -16,28 +16,21 @@ const ClassOfStudents = () => {
     return groupedByCohort[cohortCode].push(student);
   });
 
-    const [expanedCohorts, setExpanedCohorts] = useState({})
-
-    const toggleCohort = (cohortCode) => {
-        setExpanedCohorts((prevState) => ({
-            ...prevState, [cohortCode]: !prevState[cohortCode],
-        }));
-    };
-
   return (
     <div>
       {Object.entries(groupedByCohort).map(([cohortCode, students]) => (
         <div key={cohortCode}>
-          <h3 onClick={() => toggleCohort(cohortCode)}>{cohortCode} {expanedCohorts[cohortCode]? "▼" : "▶️"}
+          <h3 onClick={() => setSelectedCohort(cohortCode)}>
+            {cohortCode} {selectedCohort === cohortCode ? " (Selected)" : ""}
           </h3>
-          {expanedCohorts[cohortCode] && (
-          <ul>
-            {students.map((student, index) => (
-              <li key={index}>
-                <StudentCard student={student} />
-              </li>
-            ))}
-          </ul>
+          {cohortCode === selectedCohort && (
+            <ul>
+              {students.map((student, index) => (
+                <li key={index}>
+                  <StudentCard student={student} />
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       ))}
