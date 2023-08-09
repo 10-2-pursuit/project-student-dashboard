@@ -1,0 +1,40 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+        grid-template-columns: 1fr, 2fr;
+        grid-template-rows: minmax(100px, auto);
+        column-gap: 120px;
+        grid-area: "cohort students";
+
+}
+.header {
+
+grid-area: header;
+}
+.cohort {
+grid-area: cohort;
+padding-left: 10px;
+}
+
+.students {
+grid-area: students;
+}
+header {
+        background: mediumorchid;
+        color: white;
+        font-size: xx-large;
+        font-family: 'Courier New', Courier, monospace;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        padding: 50px ;
+  }
+.student-card {
+    border: 2px solid black;
+  width: 95%;
+height: fit-content;
+margin: 5px;
+gap: 20px;
+align-items: flex-start;
+}
