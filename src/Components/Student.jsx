@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 
+import StudentDetails from './StudentDetails';
+
 const Student = ({student}) => {
     const name = student.names
 
@@ -16,17 +18,22 @@ const Student = ({student}) => {
             <div className='StudentRight'>
                 <h3>{`${name.preferredName} ${name.middleName} ${name.surname}`}</h3>
                 <span>{`${student.username}`}</span><br />
-                <span><span className='Glow'>Birthday: </span>{`${student.dob}`}</span><br />
+                <span><span className='SpanGreen'>Birthday: </span>{`${student.dob}`}</span><br /><br />
                 <span 
-                    className='Glow ShowMore'
+                    className='SpanGreen ShowMore'
                     onClick={handleShowDetails}
                     >{ShowDetails ? "Hide Details..." : "Show Details..."}</span><br />
-                {ShowDetails ? (
+                
+            </div>
+            {ShowDetails ? (
                 <>
-                supae
+                    <StudentDetails 
+                        codewars={student.codewars}
+                        scores={student.cohort.scores} 
+                        certifications={student.certifications}
+                    />
                 </>
                 ) : null}
-            </div>
         </div>
     );
 }
