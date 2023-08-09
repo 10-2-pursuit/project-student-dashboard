@@ -5,4 +5,61 @@
     border-radius: 10px;
     padding: 1em;
     box-sizing: border-box;
+    display:grid;
+    grid-template-areas: "image b_info" "detail detail";
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    grid-area: image;
+    display: block;
+}
+
+.brief_info {
+    grid-area: b_info;
+}
+
+.app {
+    display: grid;
+    grid-template-areas: "h h h h" "b b b b" "b b b b" "b b b b";
+}
+
+header {
+    grid-area: h;
+    display: flex;
+    background-color: cadetblue;
+}
+
+main {
+    grid-area: b;
+}
+
+.detail {
+    grid-area: detail;
+    display:grid;
+    grid-template-areas: "track " "cns" "ooo";
+    text-align: center;
+}
+
+.track {
+    grid-area: track;
+    text-align: right;
+}
+
+.certifications_and_score{
+    grid-area: cns;
+    display:inline-flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: justify;
+}
+
+.one_on_one {
+    grid-area: ooo;
+    text-align: left;
+}
+
+ul {
+    list-style: none;
 }

@@ -2,6 +2,7 @@ import StudentList from "./components/StudentList";
 import data from './data/data.json';
 import CohortList from "./components/CohortList";
 import { useState } from "react";
+import Header from "./components/Header";
 
 function App() {
   const [cohortList, setCohortList] = useState(cohortListGenerator());
@@ -19,11 +20,12 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Student Dashboard</h1>
-      <p>Total students: {studentList.length}</p>
-      <CohortList cohortList={ cohortList } setStudentList={ setStudentList } data={data}/>
-      <StudentList studentList={ studentList }/>
+    <div className="app">
+      <Header cohortList={ cohortList } setStudentList={ setStudentList } data={data}/>
+      <main>
+        <p>Total students: {studentList.length}</p>
+        <StudentList studentList={ studentList }/>
+      </main>
     </div>
   );
 }
