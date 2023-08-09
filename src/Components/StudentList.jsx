@@ -1,5 +1,5 @@
 import { useState } from "react";
-import StudentCard from "./StudentCard";
+import Details from "./Details";
 
 export default function StudentList({ students }) {
   const [studentDetails, setStudentDetails] = useState(null);
@@ -54,13 +54,18 @@ export default function StudentList({ students }) {
               {student.names.preferredName} {student.names.middleName.charAt(0)}
               . {student.names.surname} <br />
               {student.username} <br /> Birthday: {formatDate(student.dob)}
-              <button onClick={toggleStudentDetails(student.id)}>
-                {studentDetails === student.id ? "Show More" : "Show Less"}
-              </button>
+              <br />
+              <span onClick={() => toggleStudentDetails(student.id)}>
+                {studentDetails === student.id
+                  ? "Show Less..."
+                  : "Show More..."}
+              </span>
             </p>
-            {studentDetails === student.id && (
-                <StudentCard />
-            )}
+            {studentDetails === student.id ? (
+              <div className="student-details">
+                <Details student = {student} />
+              </div>
+            ) : null}
           </li>
         ))}
       </ul>
