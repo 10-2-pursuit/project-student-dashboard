@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OnTrack = () => {
+const Open = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const OnTrack = () => {
     );
 }
 
-export default OnTrack;
+export default Open;

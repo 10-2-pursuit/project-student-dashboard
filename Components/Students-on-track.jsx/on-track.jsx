@@ -1,11 +1,8 @@
 import React from 'react';
-import Data from '../data/data'
+impo
+const OnTrack = () => {
 
-
-
-
-
-const StudentData = () => {
+    const 
     return (
         <div>
             
@@ -13,4 +10,4 @@ const StudentData = () => {
     );
 }
 
-export default StudentData;
+export default OnTrack;

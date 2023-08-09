@@ -1,11 +1,9 @@
 import React from 'react';
-import Data from '../data/data'
+import Data from '../data/data.json'
 
 
 
-
-
-const StudentData = () => {
+const Cohorts = () => {
     return (
         <div>
             
@@ -13,4 +11,4 @@ const StudentData = () => {
     );
 }
 
-export default StudentData;
+export default Cohorts;

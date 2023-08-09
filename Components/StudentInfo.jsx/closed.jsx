@@ -1,11 +1,6 @@
 import React from 'react';
-import Data from '../data/data'
 
-
-
-
-
-const StudentData = () => {
+const Closed = () => {
     return (
         <div>
             
@@ -13,4 +8,4 @@ const StudentData = () => {
     );
 }
 
-export default StudentData;
+export default Closed;
