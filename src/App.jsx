@@ -19,7 +19,9 @@ function App() {
     }
   });
 
-  console.log(cohorts);
+  function filterStudents(){
+    
+  }
 
   return (
     <div className="pageLayout">

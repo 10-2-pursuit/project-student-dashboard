@@ -1,6 +1,7 @@
 export default function CohortList({ cohorts, setCohorts, students }) {
   return (
-    <ul className="cohortList">
+    <div className="cohortList">
+    <ul>
       <h2>Choose a Class by Start Date</h2>
       {cohorts.map((cohort) => {
         return (
@@ -10,5 +11,6 @@ export default function CohortList({ cohorts, setCohorts, students }) {
         );
       })}
     </ul>
+    </div>
   );
 }

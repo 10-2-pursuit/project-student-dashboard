@@ -22,17 +22,20 @@ header {
 
 .cohortList {
     grid-area: cohorts;
+}
+
+.cohortList ul {
     list-style: none;
 }
 
 .cohort {
-    margin: 5px;
     
+    border-bottom: 1px solid teal;
 }
 
 .student {
     display: flex;
-    width: 350px;
+    width: 400px;
     height: 200px;
     flex-direction: row;
     align-items: center;
