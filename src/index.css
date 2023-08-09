@@ -63,11 +63,11 @@ body{
   }
 
   .additional-info {
-    border: 1px solid #ccc;
-    padding: 20px;
-    background-color: #f8f8f8;
-    margin-top: 20px;
-  }
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #f8f8f8;
+  margin-top: 20px;
+}
 
 .toggle-button {
   background-color: #007bff;
