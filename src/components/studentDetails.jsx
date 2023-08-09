@@ -26,12 +26,19 @@ const assessmentsPercentage = student.cohort.scores.assessment * 100;
          {viewMore ? "Hide Details" : "Show Details"}
          </button>
 
-
         {viewMore && (
-            <dic className= "additional-info"
-        )}
+            <div className="additional-info">
+                <p>Assigments Score: {assignmentsPercentage}%</p>
+                <p>Project Score: {projectsPercentage}%</p>
+                <p>Assesments Score: {assessmentsPercentage}%</p>
+                <p>Resume Certification: {student.certifications.resume ? "✅ " : "❌"}</p>
+                <p>Resume Certification: {student.certifications.resume ? "✅ " : "❌"}</p>
+                <p>LinkedIn Certification:{student.certifications.linkedin ? "✅" : "❌"}</p>
+                <p>GitHub Certification:{student.certifications.github ? "✅" :"❌" }</p>
+                <p>Mock Interview Certification: {student.certifications.mockInterview ? "✅" :"❌" }</p>
         </div>
-
+        )}
+</div>
     );
 };
 
