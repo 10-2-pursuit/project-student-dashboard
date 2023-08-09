@@ -42,6 +42,16 @@ export default function StudentList({ students }) {
     }
   };
 
+  const isOnTrack = (student) => {
+    return (
+      student.certifications.resume &&
+      student.certifications.linkedin &&
+      student.certifications.github &&
+      student.certifications.mockInterview &&
+      student.codewars.score.current.total > 600
+    );
+  };
+
   return (
     <div className="student-list">
       <h2>Students</h2>
@@ -52,7 +62,13 @@ export default function StudentList({ students }) {
             <img src={student.profilePhoto} alt={student.names.surname} />
             <p>
               {student.names.preferredName} {student.names.middleName.charAt(0)}
-              . {student.names.surname} <br />
+              . {student.names.surname}{" "}
+              {isOnTrack(student) ? (
+                <span className="on-track">On Track</span>
+              ) : (
+                <span className="off-track">Off Track</span>
+              )}{" "}
+              <br />
               {student.username} <br /> Birthday: {formatDate(student.dob)}
               <br />
               <span onClick={() => toggleStudentDetails(student.id)}>
@@ -63,7 +79,7 @@ export default function StudentList({ students }) {
             </p>
             {studentDetails === student.id ? (
               <div className="student-details">
-                <Details student = {student} />
+                <Details student={student} />
               </div>
             ) : null}
           </li>
