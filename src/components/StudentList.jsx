@@ -1,26 +1,18 @@
 import React from 'react';
+import StudentDetails from './studentDetails';
 
-const StudentList =  ({students}) => {
+const StudentList =  ({students, onSelectStudent}) => {
     return (
-        <div className="student-list">
-            <h2>Student List</h2>
-            <ul>
-                {students.map(data=> (
-                    <li key={data.id} className='student-item'>
-                        <img
-                        src={data.profilePhoto}
-                        alt={`${data.names.preferredName} Profile`}
-                        />
-                        <div className='student-info'>
-                            <h3>{data.name.preferredName}</h3>
-                            <p>Username: {data.username}</p>
-                            <p>Birthday: {data.dob}</p>
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        </div>
+      <div className="student-list">
+        {students.map(student => (
+          <div key={student.id} className='student'>
+            <img src= {student.profilePhoto} alt={`${student.names.preferredName}'s profile`} />
+            <p>Name: {student.names.preferredName}</p>
+            <button onClick={() => onSelectStudent(student)}>Show Details</button>
+      </div>
+      ))}
+      </div>
     );
-}
+        };
 
 export default StudentList;
