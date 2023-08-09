@@ -58,15 +58,28 @@
     grid-row: 2 / span 1;
     grid-column: 2 / span 3;
     background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Glow {
+    color: green
 }
 
 .Student {
     border: 2px solid var(--customGreen);
     padding: 10px;
     margin: 10px;
+    /* color: black; */
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.StudentRight {
+    grid-column: 2;
 }
 
 .Student img{
+    grid-column: 1;
     transition: 250ms;
     width: 100px;
     padding: 10px;
@@ -77,4 +90,8 @@
     width: 200px;
     transition: 250ms;
     border-radius: 100px;
+ }
+
+ .ShowMore{
+    text-decoration: underline;
  }
