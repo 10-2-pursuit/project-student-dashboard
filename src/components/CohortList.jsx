@@ -20,7 +20,7 @@ export default function CohortList({cohortList, setStudentList, data}){
         <ul>
             {cohortList.map((cohort)=>{
                 return(
-                    <li key={cohort} onClick={()=>studentListHandler(cohort)}>{cohort}</li>
+                    <li key={cohort} onClick={()=>studentListHandler(cohort)}>{cohort.replace(/([^0-9])([0-9])/g, `$1 $2`)}</li>
                 )
             })}
         </ul>
