@@ -9,8 +9,9 @@ const toggleView = () => {
 
 const isOnTrack = student.certifications.resume && student.certifications.linkedin && student.certifications.github && student.certifications.mockInterview && student.codewars.current.total > 600; 
 
-const assignmentsPercentage = student.cohort.score.assignments * 100;
-const projectPercentage = 
+const assignmentsPercentage = student.cohort.scores.assignments * 100;
+const projectsPercentage = student.cohort.scores.projects * 100;
+const assessmentsPercentage = student.cohort.scores.assessment * 100; 
 
 
     return (
@@ -21,6 +22,14 @@ const projectPercentage =
          <p>UserName: {student.username}</p>
          <p>Birthday: {student.dob}</p> 
          <p>Status: {isOnTrack ? "On Track" : "Failing Foward"}</p>
+         <button onclick={toggleView}> 
+         {viewMore ? "Hide Details" : "Show Details"}
+         </button>
+
+
+        {viewMore && (
+            <dic className= "additional-info"
+        )}
         </div>
 
     );
