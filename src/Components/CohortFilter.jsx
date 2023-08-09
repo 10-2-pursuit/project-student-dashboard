@@ -17,7 +17,7 @@ export default function CohortFilter({cohorts, onSelect, onShowAll}) {
                 <li onClick={() => {onShowAll(); setSelectedCohort(null); }}>All Students</li>
 
                 {cohorts.map(cohort => (
-                    <li key={cohort} onClick={() => handleCohortClick(cohort)} className={selectedCohort === cohort ? 'active' : ''} > {cohort.replace(re, '$& ')} </li>
+                    <li key={cohort} onClick={() => handleCohortClick(cohort)} > {cohort.replace(re, '$& ')} </li>
                 ))}
             </ul>
         </div>
