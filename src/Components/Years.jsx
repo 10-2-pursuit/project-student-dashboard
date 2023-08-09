@@ -13,7 +13,7 @@ const Years = ({studentsData}) => {
 
     return (
         <div className='Years'>
-            <h4> Choose a Class by Start Date</h4>
+            <h3> Choose a Class by Start Date</h3>
             {yearList.map((year) => <Year name={year}/>)}
         </div>
     );

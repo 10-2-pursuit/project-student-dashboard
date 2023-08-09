@@ -8,7 +8,7 @@ const Students = ({studentsData, selectedCohort}) => {
     // studentsData.map(() => {})
     return (
         <div className='Students'>
-            <h2>All Students</h2>
+            <h3>All Students</h3>
             <h4>Total Students: <span className='Glow'>{studentsData.length}</span></h4>
             {studentsData.map((student) => 
                 <Student student={student}/>
