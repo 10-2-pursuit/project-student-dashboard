@@ -7,19 +7,28 @@ import "/App.css";
 console.log(studentsData);
 
 function App() {
-
   const [students, setStudents] = useState(studentsData);
   const [cohorts, setCohorts] = useState([]);
 
-  function filterCohorts(students) {
-    students.filter((student) => student.cohort.cohortCode)
-  }
+  cohorts.push("All Students");
+  students.forEach((cohort) => {
+    if (
+      !cohorts.find((cohortSeason) => cohortSeason === cohort.cohort.cohortCode)
+    ) {
+      cohorts.push(cohort.cohort.cohortCode);
+    }
+  });
 
+  console.log(cohorts);
 
   return (
     <div className="pageLayout">
       <header>Student Dashboard</header>
-      <CohortList cohorts={cohorts} students={students}/>
+      <CohortList
+        cohorts={cohorts}
+        setCohorts={setCohorts}
+        students={students}
+      />
       <StudentList students={students} />
     </div>
   );
