@@ -103,3 +103,7 @@
     grid-template-columns: repeat(3, 1fr);
  }
 
+.Notes {
+    border-top: 2px solid var(--customGreen);
+    grid-column: 1 / span 2;
+}

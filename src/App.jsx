@@ -10,6 +10,11 @@ import studentsData from "./data/data.json"
 function App() {
 
   const [Cohort, setCohort] = useState("All Students")
+  const [studentNotes, setStudentNotes] = useState({})
+
+  const updateStudentNotes = (newNotes) => {
+    setStudentNotes(newNotes)
+  }
 
   const updateCohort = (newCohort) => {
     setCohort(newCohort)
