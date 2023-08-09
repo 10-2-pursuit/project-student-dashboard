@@ -1,14 +1,14 @@
 import React from "react";
 import StudentCard from "./StudentCard";
 
-const StudentList = ({ students }) => {
+const StudentList = ({ students, selectedCohort }) => {
 
   return (
     <div>
-      <ul>
-          {students.map((student, index) => (
+        {students.filter((student) => student.cohort.cohortCode === selectedCohort ).map((student, index) => (
             <StudentCard key={index} student={student} />
           ))}
+      <ul>
       </ul>
     </div>
   );
