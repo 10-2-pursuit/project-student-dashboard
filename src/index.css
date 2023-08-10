@@ -116,8 +116,29 @@
     grid-template-columns: repeat(3, 1fr);
  }
 
+
+
+ /* CSS for notes and related subelements */
 .Notes {
     border-top: 2px solid var(--customGreen);
     grid-column: 1 / span 3;
+    padding: 10px
 }
 
+fieldset {
+    padding: 20px;
+    /* margin: 10px */
+}
+label {
+    margin-right: 10px
+}
+
+input[type="submit"] {
+    border: none;
+    margin: 5px;
+    padding: 5px 20px 5px 20px;
+    color: aliceblue;
+    border-radius: 10px;
+    background-color: var(--customGreen);
+
+}

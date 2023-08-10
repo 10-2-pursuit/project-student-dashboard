@@ -1,7 +1,7 @@
 import React from 'react';
 import Student from './Student';
 
-const Students = ({studentsData, selectedCohort}) => {
+const Students = ({studentsData, selectedCohort, handleFormSubmit}) => {
     console.log(selectedCohort)
     console.log(studentsData)
     

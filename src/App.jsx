@@ -10,7 +10,8 @@ import studentsData from "./data/data.json"
 function App() {
 
   const [Cohort, setCohort] = useState("All Students")
-  const [studentNotes, setStudentNotes] = useState({})
+  const [StudentNotes, setStudentNotes] = useState({})
+
 
   const updateStudentNotes = (newNotes) => {
     setStudentNotes(newNotes)
@@ -20,13 +21,23 @@ function App() {
     setCohort(newCohort)
   }
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
+    console.log(e)
+
+    // const newStudentNotes = {...StudentNotes, }
+  }
+
+  
+
   return (
   <>
     <Header/>
     <Years studentsData={studentsData}/>
     <Students 
       studentsData={studentsData} 
-      selectedCohort={Cohort} />
+      selectedCohort={Cohort} 
+      handleFormSubmit={handleFormSubmit}/>
   </>
   );
 }
