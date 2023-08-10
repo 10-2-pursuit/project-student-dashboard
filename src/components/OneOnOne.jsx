@@ -1,7 +1,10 @@
 export default function OneOnOne({comments, setComments, studentId}){
     function updateComments(e){
         const form = document.getElementById(e.target.id);
-        setComments([...comments, {[`${form.writer.value}`]:form.comment.value}]);
+        let temp = (comments[studentId] ? [[form.writer.value, form.comment.value]] : Object.assign(comments[studentId],[form.writer.value, form.comment.value]));
+        console.log(temp);
+        setComments({...comments, [studentId]:temp});
+        console.log(comments)
         form.reset();
     }
 
