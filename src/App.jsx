@@ -34,7 +34,7 @@ function App() {
     <div className={"app" + ' ' + (darkmode ? "dark" : null)}>
       <Header cohortList={ cohortList } setStudentList={ setStudentList } data={data} darkmode={ darkmode } setDarkmode={ setDarkmode }/>
       <main>
-        <p>Total students: {studentList.length}</p>
+        <p><span className="total_student_number">Total number of students: {studentList.length}</span></p>
         <StudentList studentList={ studentList } darkmode={ darkmode } comments={ comments } setComments={ setComments }/>
       </main>
     </div>

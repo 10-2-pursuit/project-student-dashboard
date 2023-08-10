@@ -9,7 +9,7 @@ export default function Student({ student, comments, setComments, darkmode }){
     }
 
     return(
-        <div id={student.id} className="studentCard">
+        <div id={student.id} className={"studentCard"+' '+(showDetail ? "detail_open" : null)}>
             <div className="image" >
                 <img src={ student.profilePhoto} />
             </div>
