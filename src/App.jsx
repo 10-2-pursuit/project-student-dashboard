@@ -10,11 +10,12 @@ import studentsData from "./data/data.json"
 function App() {
 
   const [Cohort, setCohort] = useState("All Students")
-  const [StudentNotes, setStudentNotes] = useState({})
+  const [studentNotes, setStudentNotes] = useState({})
 
 
   const updateStudentNotes = (newNotes) => {
     setStudentNotes(newNotes)
+ 
   }
 
   const updateCohort = (newCohort) => {
@@ -23,9 +24,33 @@ function App() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    console.log(e)
 
-    // const newStudentNotes = {...StudentNotes, }
+    let thisStudentNotes = {}
+
+    if(studentNotes[e.target.studentId.value]){
+      console.log("yeah")
+      thisStudentNotes = {
+        [e.target.studentId.value]: 
+          [
+            ...studentNotes[e.target.studentId.value],
+            [e.target.commenterName.value, e.target.comment.value]
+          ]
+          
+      }
+    }  else {
+      console.log("nah")
+      thisStudentNotes = {
+        [e.target.studentId.value]: 
+          [
+            [e.target.commenterName.value, e.target.comment.value]
+          ]
+          
+      }
+    }
+
+
+    console.log(thisStudentNotes)
+    updateStudentNotes(thisStudentNotes)
   }
 
   
@@ -37,7 +62,9 @@ function App() {
     <Students 
       studentsData={studentsData} 
       selectedCohort={Cohort} 
-      handleFormSubmit={handleFormSubmit}/>
+      handleFormSubmit={handleFormSubmit}
+      updateStudentNotes={updateStudentNotes}
+      />
   </>
   );
 }

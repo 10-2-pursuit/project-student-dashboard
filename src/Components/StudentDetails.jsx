@@ -1,7 +1,13 @@
 import React from 'react';
 import Notes from './Notes';
 
-const StudentDetails = ({codewars, scores, certifications}) => {
+const StudentDetails = ({
+    studentId,
+    codewars, 
+    scores, 
+    certifications, 
+    handleFormSubmit
+}) => {
 
     const convertPercent = (total, divide) => {
         return ((total / divide) * 100).toFixed()
@@ -35,7 +41,10 @@ const StudentDetails = ({codewars, scores, certifications}) => {
                 </section>
             </div>
             <br />
-            <Notes/>
+            <Notes 
+                handleFormSubmit={handleFormSubmit}
+                studentId={studentId}
+            />
         </>
     );
 }

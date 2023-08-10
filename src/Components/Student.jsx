@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import StudentDetails from './StudentDetails';
 
-const Student = ({student}) => {
+const Student = ({student, handleFormSubmit}) => {
     const name = student.names
 
     const [ShowDetails, setShowDetails] = useState(false)
@@ -47,6 +47,8 @@ const Student = ({student}) => {
                         codewars={student.codewars}
                         scores={student.cohort.scores} 
                         certifications={student.certifications}
+                        handleFormSubmit={handleFormSubmit}
+                        studentId={student.id}
                     />
                 </>
                 ) : null}
