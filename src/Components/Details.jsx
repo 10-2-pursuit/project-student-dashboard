@@ -49,7 +49,7 @@ export default function Details({ student }) {
         </div>
       </div>
       <hr />
-      <div>
+      <div className="notes">
         <h3>1-On-1 Notes</h3>
         <form onSubmit={handleSubmit}>
           <label htmlFor="commenter">Commentor Name: </label>
