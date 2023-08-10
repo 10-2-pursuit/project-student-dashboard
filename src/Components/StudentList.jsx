@@ -43,13 +43,16 @@ export default function StudentList({ students }) {
   };
 
   const isOnTrack = (student) => {
-    return (
+    if (
       student.certifications.resume &&
       student.certifications.linkedin &&
       student.certifications.github &&
-      student.certifications.mockInterview &&
-      student.codewars.score.current.total > 600
-    );
+      student.certifications.mockInterview
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   return (
@@ -61,14 +64,15 @@ export default function StudentList({ students }) {
           <li key={student.id}>
             <img src={student.profilePhoto} alt={student.names.surname} />
             <p>
-              {student.names.preferredName} {student.names.middleName.charAt(0)}
-              {/* . {student.names.surname}{" "}
-              {isOnTrack(student) ? (
-                <span className="on-track">On Track</span>
-              ) : (
-                <span className="off-track">Off Track</span>
-              )}{" "} */}
-              <br />
+              <p className="name-track">
+                {student.names.preferredName}{" "}
+                {student.names.middleName.charAt(0)}. {student.names.surname}{" "}
+                {isOnTrack(student) && student.codewars.current.total ? (
+                  <span className="track">On Track</span>
+                ) : (
+                  <span className="track">Off Track</span>
+                )}{" "}
+              </p>
               {student.username} <br /> Birthday: {formatDate(student.dob)}
               <br />
               <span onClick={() => toggleStudentDetails(student.id)}>
@@ -78,9 +82,7 @@ export default function StudentList({ students }) {
               </span>
             </p>
             {studentDetails === student.id ? (
-              <div className="student-details">
                 <Details student={student} />
-              </div>
             ) : null}
           </li>
         ))}

@@ -26,7 +26,7 @@ function App() {
   }
 
   return (
-    <body>
+    <div>
       <Header />
       <div className="container">
         <div className="content">
@@ -35,7 +35,7 @@ function App() {
         </div>
         <Footer />
       </div>
-    </body>
+    </div>
   );
 }
 

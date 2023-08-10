@@ -43,9 +43,10 @@ img {
     margin-left: -50px;
 }
 
-/* .student-list h3 {
-    padding-bottom: -40px;
-} */
+.grades {
+    display: flex;
+    flex-direction: row;
+}
 
 footer {
     position: absolute;

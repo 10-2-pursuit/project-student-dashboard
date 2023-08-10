@@ -1,42 +1,36 @@
-export default function StudentCard({student}) {
-    return (
-      <>
-      <h2>Codewars</h2>
-      <p>Current Total: {student.codewars.current.total}</p>
-      <p>Current Last Week: {student.codewars.current.lastWeek}</p>
-      <p>Goal Total: {student.codewars.goal.total}</p>
-      <p>Goal Last Week: {student.codewars.goal.lastWeek}</p>
+export default function StudentCard({ student }) {
+  return (
+    <div className="student-details">
+      <div className="grades">
+        <div className="codewars">
+          <h3>Codewars</h3>
+          <p>Current Total: {student.codewars.current.total}</p>
+          <p>Current Last Week: {student.codewars.current.lastWeek}</p>
+          <p>Goal Total: {student.codewars.goal.total}</p>
+          <p>Goal Last Week: {student.codewars.goal.lastWeek}</p>
+        </div>
 
-      <h2>Certifications</h2>
-      <p>
-        Resume:{" "}
-        {student.certifications.resume
-          ? "Available"
-          : "Not available"}
-      </p>
-      <p>
-        LinkedIn:{" "}
-        {student.certifications.linkedin
-          ? "Available"
-          : "Not available"}
-      </p>
-      <p>
-        GitHub:{" "}
-        {student.certifications.github
-          ? "Available"
-          : "Not available"}
-      </p>
-      <p>
-        Mock Interview:{" "}
-        {student.certifications.mockInterview
-          ? "Available"
-          : "Not available"}
-      </p>
+        <div className="cert">
+          <h3>Certifications</h3>
+          <p>Resume: {student.certifications.resume ? "✅" : "❌"}</p>
+          <p>LinkedIn: {student.certifications.linkedin ? "✅" : "❌"}</p>
+          <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
+          <p>
+            Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}
+          </p>
+        </div>
 
-      <h2>Cohort Scores</h2>
-      <p>Assignments: {student.cohort.scores.assignments}</p>
-      <p>Projects: {student.cohort.scores.projects}</p>
-      <p>Assessments: {student.cohort.scores.assessments}</p>
-    </>
-      );
+        <div>
+          <h3>Cohort Scores</h3>
+          <p>Assignments: {student.cohort.scores.assignments}</p>
+          <p>Projects: {student.cohort.scores.projects}</p>
+          <p>Assessments: {student.cohort.scores.assessments}</p>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <h3>1-On-1 Notes</h3>
+      </div>
+    </div>
+  );
 }
