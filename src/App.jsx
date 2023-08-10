@@ -8,6 +8,7 @@ function App() {
   const [cohortList, setCohortList] = useState(cohortListGenerator());
   const [studentList, setStudentList] = useState(data);
   const [darkmode, setDarkmode] = useState(false);
+  const [comments, setComments] = useState([]);
 
   function cohortListGenerator(){
     let cohortList = [];
@@ -25,7 +26,7 @@ function App() {
       <Header cohortList={ cohortList } setStudentList={ setStudentList } data={data} darkmode={ darkmode } setDarkmode={ setDarkmode }/>
       <main>
         <p>Total students: {studentList.length}</p>
-        <StudentList studentList={ studentList } darkmode={ darkmode }/>
+        <StudentList studentList={ studentList } darkmode={ darkmode } comments={ comments } setComments={ setComments }/>
       </main>
     </div>
   );

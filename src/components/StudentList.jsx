@@ -1,8 +1,8 @@
 import Student from './Student';
 import { useState } from 'react';
 
-export default function StudentList({ studentList, darkmode }){
-    const [comments, setComments] = useState([]);
+export default function StudentList({ studentList, darkmode, comments, setComments }){
+    
 
     return (
         <ul>
