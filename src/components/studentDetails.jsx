@@ -68,17 +68,14 @@ const StudentDetails = ({ student }) => {
       <div className="notes-list">
         <h4>Notes:</h4>
         <ul>
-            {notes.map((note, index) => (<li key={index}>
-                <strong>{note.commenter}: </strong>{note.comment}
-            </li>
-            ))}
+            {notes.map((note, index) => (
+            <li key={index}>
+                <strong>{note.commenter}:</strong>{note.comment}
+                </li>
+          ))}
         </ul>
       </div>
     </div>
-  )}
-  </div>
-
   );
 };
-
 export default StudentDetails;
