@@ -37,7 +37,7 @@ export default function CohortList({cohortList, setStudentList, data, darkmode, 
             <div className="darkmode_container">
                 <label class="switch">
                     {darkmode ? <input type="checkbox" onClick={()=>onChangeHandler()} checked/> : <input type="checkbox" onClick={()=>onChangeHandler()}/>}                    
-                    <span class="slider round"></span><span className="label_darkmode">{darkmode ? (<>LIGHT</>) : (<>DARK</>)}</span>
+                    <span class="slider round"></span><span className="label_darkmode">{darkmode ? (<>🌙DARK</>) : (<>☀️LIGHT</>)}</span>
                 </label>
             </div>
         </>

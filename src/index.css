@@ -12,6 +12,7 @@
     display:grid;
     grid-template-areas: "image b_info" "detail detail";
     margin-top: 1em;
+    padding-right: 5%;
     transition: 0.2s;
 }
 
@@ -33,6 +34,7 @@
     box-shadow: 2px 2px 4px black;
     border-radius: 10px;
     padding: 1em;
+    padding-right: 5%;
     box-sizing: border-box;
     display:grid;
     grid-template-areas: "image b_info" "detail detail";
@@ -183,7 +185,7 @@ main {
 
 .main_container {
     grid-area: right_container;
-    width: 70vw;
+    width: 68vw;
 }
 
 .left_container {
@@ -234,8 +236,24 @@ ul {
     color: white;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .header {
         height: 10vh;
+    }
+    main {
+        display: grid;
+        grid-template-areas: "left_container" "right_container";
+        width: 100vw;
+        align-content: center;
+    }
+
+    .left_container {
+        width: fit-content;
+        margin: auto;
+    }
+
+    .main_container {
+        width: 100%;
+        margin-left: 20%;
     }
 }
