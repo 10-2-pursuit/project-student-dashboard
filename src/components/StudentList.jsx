@@ -13,7 +13,7 @@ const StudentList =  ({students, onSelectStudent}) => {
             <p>UserName: {student.username}</p>
             <br/>
             <p>Birthday: {student.dob}</p>
-            <button onClick={() => onSelectStudent(student)}>Show Details</button>
+            <button onClick={() => onSelectStudent(student)}>Show Student</button>
       </div>
       ))}
       </div>
