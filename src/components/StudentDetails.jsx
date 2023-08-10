@@ -18,7 +18,7 @@ const StudentDetails = ({student}) => {
           <h3>CodeWars</h3><br />
           <p>Current Total:<span>{student.codewars.current.total}</span></p><br />
           <p>{student.codewars.current.lastWeek}</p><br />
-          <p>{student.goal.total}</p>
+          <p>{student.codewars.goal.total}</p>
         </div>
         <div>
             <h3>Scores</h3><br />
@@ -28,10 +28,10 @@ const StudentDetails = ({student}) => {
         </div>
         <div>
             <h3>Certifications</h3><br />
-            <p>Resume: {student.certifications.resume ? '❌' : '✅'}</p><br />
-          <p>Linkedin: {student.certifications.linkedin ? '❌' : '✅'}</p><br />
-          <p>Github: {student.certifications.githib ? '❌' : '✅'}</p><br />
-          <p>Mock Interview: {student.certifications.mockInterview ? '❌' : '✅'}</p>
+            <p>Resume: {student.certifications.resume ? '✅' : '❌'}</p><br />
+          <p>Linkedin: {student.certifications.linkedin ? '✅' : '❌'}</p><br />
+          <p>Github: {student.certifications.githib ? '✅' : '❌'}</p><br />
+          <p>Mock Interview: {student.certifications.mockInterview ? '✅' : '❌'}</p>
         </div>
         </>
       ) : null}

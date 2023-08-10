@@ -13,7 +13,7 @@ export default function StudentCard({ student }) {
             <h5>{`${firstName} ${middleInitial} ${lastName}`}</h5>
             <p>Email: {username}</p>
             <p>Birthday: {dob}</p>
-            <StudentDetails students={student}/>
+            <StudentDetails student={student}/>
         </li>
     )
 }
