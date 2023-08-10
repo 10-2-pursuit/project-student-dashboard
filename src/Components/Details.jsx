@@ -1,7 +1,24 @@
 import { useState } from "react";
 export default function Details({ student }) {
 
-  const [newNote, setNewNote] = useState([]);
+  const [newNote, setNewNote] = useState({commenter: "", comment: ""});
+
+  function handleAddNote() {
+    const createNote = {commenter: newNote.commenter, comment: newNote.comment};
+    const updatedNotes = [...student.notes, createNote];
+    setNewNote({ commenter: "", comment: "" });
+    student.notes = updatedNotes;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    handleAddNote();
+  }
+
+  function handleTextChange(e) {
+    const { id, value } = e.target;
+    setNewNote((prevNote) => ({ ...prevNote, [id]: value }));
+  }
 
   return (
     <div className="student-details">
@@ -34,10 +51,20 @@ export default function Details({ student }) {
       <hr />
       <div>
         <h3>1-On-1 Notes</h3>
-        <form>
-          <label htmlFor="name">Commentor Name: </label>
-          <input type="text" id="name"/>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="commenter">Commentor Name: </label>
+          <input type="text" id="commenter" onChange={handleTextChange} value={newNote.commenter}required /> <br />
+
+          <label htmlFor="comment">Comment: </label>
+          <input type="text" id="comment" onChange={handleTextChange} value={newNote.comment} required/>
+          <br />
+          <button type="submit">Add Note</button>
         </form>
+        <ul>
+          {student.notes.map((person, index) => (
+            <li key={index}>{person.commenter} says, "{person.comment}"</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
