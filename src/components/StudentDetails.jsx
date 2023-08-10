@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import StudentNotes from './StudentNotes';
 
 const StudentDetails = ({student}) => {
     const [showDetails, setShowDetails] = useState(false)
@@ -16,9 +17,9 @@ const StudentDetails = ({student}) => {
         <>
         <div>
           <h3>CodeWars</h3><br />
-          <p>Current Total:<span>{student.codewars.current.total}</span></p><br />
-          <p>{student.codewars.current.lastWeek}</p><br />
-          <p>{student.codewars.goal.total}</p>
+          <p>Current Total: <span>{student.codewars.current.total}</span></p><br />
+          <p>Last Week: {student.codewars.current.lastWeek}</p><br />
+          <p>Goal: {student.codewars.goal.total}</p>
         </div>
         <div>
             <h3>Scores</h3><br />
@@ -32,6 +33,12 @@ const StudentDetails = ({student}) => {
           <p>Linkedin: {student.certifications.linkedin ? '✅' : '❌'}</p><br />
           <p>Github: {student.certifications.githib ? '✅' : '❌'}</p><br />
           <p>Mock Interview: {student.certifications.mockInterview ? '✅' : '❌'}</p>
+           <div>
+            <p>Student is {student.certifications.resume === true && student.certifications.linkedin && student.certifications.github === true && student.certifications.mockInterview === true && student.codewars.current.total >= 600 ? 'Student is on track' : 'Student is not on Track'}</p>
+           </div>
+        </div>
+        <div>
+            <StudentNotes />
         </div>
         </>
       ) : null}

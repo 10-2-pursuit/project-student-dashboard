@@ -11,6 +11,7 @@ function App() {
     <div>
       <header>Student Dashboard</header>
       <div>
+        <h1>Choose a Class by Start Date</h1>
         <h3 onClick={() => setSelectedCohort(null)}>All Students</h3>
       </div>
       <CohortSideBar students={students} setSelectedCohort={setSelectedCohort} selectedCohort={selectedCohort} />
