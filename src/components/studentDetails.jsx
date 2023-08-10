@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
- import OneOnOneNotes from "./OneOnOneNotes";
+import OneOnOneNotes from "./OneOnOneNotes";
 
 
 const StudentDetails = ({ student }) => {
@@ -77,7 +77,7 @@ const StudentDetails = ({ student }) => {
     </div>
   )}
   </div>
-  
+
   );
 };
 
