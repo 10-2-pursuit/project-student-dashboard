@@ -1,18 +1,19 @@
 import { useState } from "react";
 import React from "react";
-// import OneOnOneNotes from "./OneOnOneNotes";
+ import OneOnOneNotes from "./OneOnOneNotes";
 
 
 const StudentDetails = ({ student }) => {
   const [viewMore, setViewMore] = useState(false);
+  const [notes, setNotes] = useState ([]);
 
   const toggleView = () => {
     setViewMore(!viewMore);
   };
 
-//  const addNote = (newNote) => {
-//     setNotes([...notes,newNote ]);
- //};
+ const addNote = (newNote) => {
+    setNotes([...notes,newNote ]);
+ };
 
 
   const isOnTrack =
@@ -63,7 +64,20 @@ const StudentDetails = ({ student }) => {
           </p>
         </div>
       )}
+      <OneOnOneNotes onAddNote={addNote} />
+      <div className="notes-list">
+        <h4>Notes:</h4>
+        <ul>
+            {notes.map((note, index) => (<li key={index}>
+                <strong>{note.commenter}: </strong>{note.comment}
+            </li>
+            ))}
+        </ul>
+      </div>
     </div>
+  )}
+  </div>
+  
   );
 };
 
