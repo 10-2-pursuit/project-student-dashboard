@@ -237,6 +237,10 @@ ul {
 }
 
 @media only screen and (max-width: 768px) {
+     #root{
+        width: max-content;
+    }
+    
     .header {
         height: 10vh;
     }
@@ -253,7 +257,12 @@ ul {
     }
 
     .main_container {
+        width: 120%;
+        margin-left: 15%;
+    }
+
+    .studentCard {
         width: 100%;
-        margin-left: 20%;
+        padding-right: 5%;
     }
 }
