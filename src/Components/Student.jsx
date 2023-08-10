@@ -12,19 +12,35 @@ const Student = ({student}) => {
         setShowDetails(!ShowDetails)
     }
 
+    const checkOnTrack = (student) => {
+        if (student.certifications.resume != true 
+        ||  student.certifications.linkedin != true
+        || student.certifications.github != true) {
+            return false
+        }
+        return true
+    }
+
+    let onTrack = checkOnTrack(student)
+
     return (
         <div className='Student' id={student.id}>
             <img src={student.profilePhoto} alt="" />
-            <div className='StudentRight'>
+            <div className='StudentInfo'>
                 <h3>{`${name.preferredName} ${name.middleName} ${name.surname}`}</h3>
-                <span>{`${student.username}`}</span><br />
-                <span><span className='SpanGreen'>Birthday: </span>{`${student.dob}`}</span><br /><br />
-                <span 
+                <span>{`${student.username}`}</span>
+                <span><span className='SpanGreen'>Birthday: </span>{`${student.dob}`}</span>
+                {onTrack ? (
+                   <span className='SpanGreen onTrack'>
+                        On Track to Graduate
+                   </span>
+                ): null }
+            </div>
+            <span 
                     className='SpanGreen ShowMore'
                     onClick={handleShowDetails}
-                    >{ShowDetails ? "Hide Details..." : "Show Details..."}</span><br />
-                
-            </div>
+                    >{ShowDetails ? "Hide Details..." : "Show Details..."}
+            </span>
             {ShowDetails ? (
                 <>
                     <StudentDetails 
