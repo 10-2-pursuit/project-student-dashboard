@@ -5,7 +5,8 @@
         grid-template-columns: 1fr, 2fr;
         grid-template-rows: minmax(100px, auto);
         column-gap: 120px;
-        grid-area: "cohort students";
+        grid-area: "cohort students"
+                    "cohort students";
 
 }
 .header {
@@ -31,10 +32,30 @@ header {
         padding: 50px ;
   }
 .student-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid black;
-  width: 95%;
-height: fit-content;
-margin: 5px;
-gap: 20px;
-align-items: flex-start;
+    width: 95%;
+    height: fit-content;
+    margin: 5px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.image {
+     flex-basis: fit-content;
+    /* padding-inline-start: 10px; */
+    image-rendering: optimizeQuality;
+}
+.profile-img {
+    width: 150px;
+    padding-left: 0%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    justify-items: left;
+    
+}
+.message {
+    text-align: center;
 }
