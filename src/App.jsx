@@ -9,6 +9,7 @@ console.log(studentsData);
 function App() {
   const [students, setStudents] = useState(studentsData);
   const [cohorts, setCohorts] = useState([]);
+  const [showMore, setShowMore] = useState(false)
 
   cohorts.push("All Students");
   students.forEach((cohort) => {
@@ -19,8 +20,8 @@ function App() {
     }
   });
 
-  function filterStudents(){
-    
+  function toggleShowMore(){
+    setShowMore(!showMore)
   }
 
   return (
@@ -31,7 +32,7 @@ function App() {
         setCohorts={setCohorts}
         students={students}
       />
-      <StudentList students={students} />
+      <StudentList students={students} toggleShowMore={toggleShowMore} showMore={showMore} setShowMore={setShowMore} />
     </div>
   );
 }
