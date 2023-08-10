@@ -1,5 +1,5 @@
 
-export default function CohortList({cohortList, setStudentList, data}){
+export default function CohortList({cohortList, setStudentList, data, darkmode, setDarkmode}){
 
     function studentListHandler(cohort){
         updateCohortList(cohort)
@@ -15,6 +15,14 @@ export default function CohortList({cohortList, setStudentList, data}){
         }
     }
 
+    function onChangeHandler(){
+        darkmodeUpdate();
+    }
+
+    function darkmodeUpdate(){
+        setDarkmode(!darkmode);
+    }
+
     return(
         <>
             <div className="cohort_list">
@@ -28,7 +36,7 @@ export default function CohortList({cohortList, setStudentList, data}){
             </div>
             <div className="dark_mode">
                 <label class="switch">
-                    <input type="checkbox" />
+                    {darkmode ? <input type="checkbox" onClick={()=>onChangeHandler()} checked/> : <input type="checkbox" onClick={()=>onChangeHandler()}/>}                    
                     <span class="slider round"></span>
                 </label>
             </div>

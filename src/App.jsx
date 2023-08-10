@@ -7,6 +7,7 @@ import Header from "./components/Header";
 function App() {
   const [cohortList, setCohortList] = useState(cohortListGenerator());
   const [studentList, setStudentList] = useState(data);
+  const [darkmode, setDarkmode] = useState(false);
 
   function cohortListGenerator(){
     let cohortList = [];
@@ -20,11 +21,11 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <Header cohortList={ cohortList } setStudentList={ setStudentList } data={data}/>
+    <div className={"app" + ' ' + (darkmode ? "dark" : null)}>
+      <Header cohortList={ cohortList } setStudentList={ setStudentList } data={data} darkmode={ darkmode } setDarkmode={ setDarkmode }/>
       <main>
         <p>Total students: {studentList.length}</p>
-        <StudentList studentList={ studentList }/>
+        <StudentList studentList={ studentList } darkmode={ darkmode }/>
       </main>
     </div>
   );

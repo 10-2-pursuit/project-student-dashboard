@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CohortList from './CohortList';
 
-export default function Header({cohortList, setStudentList, data}){
+export default function Header({cohortList, setStudentList, data, darkmode, setDarkmode}){
     const [toggleHamburger, setToggleHamburger] = useState(false);
 
     function onClickEventHandler(){
@@ -15,7 +15,15 @@ export default function Header({cohortList, setStudentList, data}){
             </div>
             <div className="menu">
                 <span onClick={()=> onClickEventHandler()}>☰</span>
-                {toggleHamburger ? (<CohortList cohortList={ cohortList } setStudentList={ setStudentList } data={data}/>) : null}
+                {toggleHamburger ? (
+                                        <CohortList 
+                                            cohortList={ cohortList } 
+                                            setStudentList={ setStudentList } 
+                                            data={data} 
+                                            darkmode={ darkmode } 
+                                            setDarkmode={ setDarkmode }
+                                        />
+                                    ) : null}
             </div>
         </header>
     )

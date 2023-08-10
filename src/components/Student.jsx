@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import StudentDetail from "./StudentDetail";
 
-export default function Student({ student, comments, setComments }){
+export default function Student({ student, comments, setComments, darkmode }){
     const [showDetail, setShowDetail] = useState(false);
     
     function detailHandler(){
