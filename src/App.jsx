@@ -8,10 +8,10 @@ console.log(studentsData);
 
 function App() {
   const [students, setStudents] = useState(studentsData);
-  const [cohorts, setCohorts] = useState([]);
+  const [cohorts, setCohorts] = useState(["All Students"]);
   const [showMore, setShowMore] = useState(false)
 
-  cohorts.push("All Students");
+ 
   students.forEach((cohort) => {
     if (
       !cohorts.find((cohortSeason) => cohortSeason === cohort.cohort.cohortCode)
