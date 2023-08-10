@@ -1,37 +1,41 @@
-//  import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import StudentList from "./components/StudentList";
 import StudentDetails from "./components/studentDetails";
 import OneOnOneNotes from "./components/OneOnOneNotes";
-
-import data from './data/data.json';
-
-import React from 'react';
+import data from "./data/data.json";
 
 const App = () => {
-  const [selectedStudent, setselectedStudent]= useState(null);
+  const [selectedStudent, setSelectedStudent] = useState(null);
+  const [notes, setNotes] = useState({});
 
-  const handleSelectedStudent = student => {
-     setselectedStudent(student);
+  const handleSelectedStudent = (student) => {
+    setSelectedStudent(student);
+  };
+
+  const addNote = (studentId, newNote) => {
+    setNotes((previousNotes) => ({
+      ...previousNotes,
+      [studentId]: [...(previousNotes[studentId] || []), newNote],
+    }));
   };
 
   return (
-    <div className= "dashboard">
+    <div className="dashboard">
       <h1>All Students</h1>
-      <StudentList students={data}onSelectStudent={handleSelectedStudent} />
-      {selectedStudent && ( 
+      <StudentList students={data} onSelectStudent={handleSelectedStudent} />
+      {selectedStudent && (
         <div className="student-details">
-          <StudentDetails student={selectedStudent}/>{/*show selected student data*/}
-          </div>
+          <StudentDetails student={selectedStudent} onAddNote={addNote} />{" "}
+          {/* Pass the addNote function */}
+        </div>
       )}
-      
+      {selectedStudent && (
+        <OneOnOneNotes
+          onAddNote={(newNote) => addNote(selectedStudent.id, newNote)}
+        />
+      )}
     </div>
   );
-}
+};
 
 export default App;
-
-
-
-
-
