@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import students from "./data/data.json";
 import StudentList from "./components/StudentList";
 import CohortSideBar from "./components/CohortSideBar";
+import StudentNotes from "./components/StudentNotes";
 
 function App() {
   const [selectedCohort, setSelectedCohort] = useState(null);

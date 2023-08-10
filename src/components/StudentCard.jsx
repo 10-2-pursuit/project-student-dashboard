@@ -1,4 +1,5 @@
 import React from "react"
+import StudentDetails from "./StudentDetails";
 
 export default function StudentCard({ student }) {
     const { names, username, dob, profilePhoto } = student;
@@ -12,6 +13,7 @@ export default function StudentCard({ student }) {
             <h5>{`${firstName} ${middleInitial} ${lastName}`}</h5>
             <p>Email: {username}</p>
             <p>Birthday: {dob}</p>
+            <StudentDetails students={student}/>
         </li>
     )
 }
