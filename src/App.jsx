@@ -19,8 +19,6 @@ function App() {
     },[]
   );
 
-  console.log(comments);
-
   function cohortListGenerator(){
     let cohortList = [];
     cohortList.push("all");
