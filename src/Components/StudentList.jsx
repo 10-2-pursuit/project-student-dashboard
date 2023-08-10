@@ -62,12 +62,12 @@ export default function StudentList({ students }) {
             <img src={student.profilePhoto} alt={student.names.surname} />
             <p>
               {student.names.preferredName} {student.names.middleName.charAt(0)}
-              . {student.names.surname}{" "}
+              {/* . {student.names.surname}{" "}
               {isOnTrack(student) ? (
                 <span className="on-track">On Track</span>
               ) : (
                 <span className="off-track">Off Track</span>
-              )}{" "}
+              )}{" "} */}
               <br />
               {student.username} <br /> Birthday: {formatDate(student.dob)}
               <br />
