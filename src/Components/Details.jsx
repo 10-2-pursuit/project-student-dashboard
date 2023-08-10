@@ -1,4 +1,8 @@
-export default function StudentCard({ student }) {
+import { useState } from "react";
+export default function Details({ student }) {
+
+  const [newNote, setNewNote] = useState([]);
+
   return (
     <div className="student-details">
       <div className="grades">
@@ -22,14 +26,18 @@ export default function StudentCard({ student }) {
 
         <div>
           <h3>Cohort Scores</h3>
-          <p>Assignments: {student.cohort.scores.assignments}</p>
-          <p>Projects: {student.cohort.scores.projects}</p>
-          <p>Assessments: {student.cohort.scores.assessments}</p>
+          <p>Assignments: {student.cohort.scores.assignments * 100}%</p>
+          <p>Projects: {student.cohort.scores.projects * 100}%</p>
+          <p>Assessments: {student.cohort.scores.assessments * 100}%</p>
         </div>
       </div>
       <hr />
       <div>
         <h3>1-On-1 Notes</h3>
+        <form>
+          <label htmlFor="name">Commentor Name: </label>
+          <input type="text" id="name"/>
+        </form>
       </div>
     </div>
   );
