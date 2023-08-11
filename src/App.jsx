@@ -29,11 +29,6 @@ const App = () => {
           {/* Pass the addNote function */}
         </div>
       )}
-      {selectedStudent && (
-        <OneOnOneNotes
-          onAddNote={(newNote) => addNote(selectedStudent.id, newNote)}
-        />
-      )}
     </div>
   );
 };
