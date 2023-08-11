@@ -22,6 +22,7 @@ const App = () => {
   return (
     <div className="dashboard">
       <h1>All Students</h1>
+      <p>Total students: {data.length}</p>{/*Display Total Count of Students */}
       <StudentList students={data} onSelectStudent={handleSelectedStudent} />
       {selectedStudent && (
         <div className="student-details">
