@@ -1,10 +1,30 @@
-
+/**
+ * cohortList()
+ * -------------------------------
+ * render page for menu button. Filtering, light&dark mode will be handeled here.
+ * 
+ * @param {React.props} param0 -  
+ * @returns 
+ */
 export default function CohortList({cohortList, setStudentList, data, darkmode, setDarkmode}){
-
+    /**
+     * studentListHandler()
+     * ------------------------
+     * an onclick event handler for <li>tags in the menu. will call updateCohortList().
+     * 
+     * @param {string} cohort - string value for cohortcode that a user clicked
+     */
     function studentListHandler(cohort){
         updateCohortList(cohort)
     }
 
+    /**
+     * updateCohortList()
+     * --------------------------
+     * will update studentList state to new filtered studentList.
+     * 
+     * @param {string} filterValue - string to filter (data.json).cohort.cohortcode
+     */
     function updateCohortList(filterValue){        
         if(filterValue !== "all"){
             const tempList = data.filter((student)=>student.cohort.cohortCode === filterValue);
@@ -15,10 +35,20 @@ export default function CohortList({cohortList, setStudentList, data, darkmode, 
         }
     }
 
+    /**
+     * onChangeHandler()
+     * ----------------------
+     * onChange event handler for darkmode.
+     */
     function onChangeHandler(){
         darkmodeUpdate();
     }
 
+    /**
+     * darkmodeUpdate()
+     * ------------------------
+     * update darkmode state hook to opposite value.
+     */
     function darkmodeUpdate(){
         setDarkmode(!darkmode);
     }
@@ -41,7 +71,5 @@ export default function CohortList({cohortList, setStudentList, data, darkmode, 
                 </label>
             </div>
         </>
-        
-        
     )
 }

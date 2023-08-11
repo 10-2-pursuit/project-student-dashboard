@@ -1,9 +1,23 @@
 import { useState } from 'react';
 import CohortList from './CohortList';
 
+/**
+ * Header()
+ * ---------------------------
+ * A header of the webpage. This will hold the title and menu. 
+ * 
+ * @param {React.prop} param0 
+ * @returns 
+ */
 export default function Header({cohortList, setStudentList, data, darkmode, setDarkmode}){
+    /** a bool state to toggle menu */
     const [toggleHamburger, setToggleHamburger] = useState(false);
 
+    /**
+     * onClickEventHandler()
+     * ------------------------
+     * update toggleHamburger to opposite value.
+     */
     function onClickEventHandler(){
         setToggleHamburger(!toggleHamburger);
     }
