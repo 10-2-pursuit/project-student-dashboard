@@ -15,28 +15,29 @@ const StudentDetails = ({student}) => {
             </button>
             {showDetails ? (
         <>
-        <div>
+        <ul>
           <h3>CodeWars</h3><br />
-          <p>Current Total: <span>{student.codewars.current.total}</span></p><br />
-          <p>Last Week: {student.codewars.current.lastWeek}</p><br />
-          <p>Goal: {student.codewars.goal.total}</p>
-        </div>
-        <div>
+          <li>Current Total: <span>{student.codewars.current.total}</span></li><br />
+          <li>Last Week: {student.codewars.current.lastWeek}</li><br />
+          <li>Goal: {student.codewars.goal.total}</li>
+          <li>Percent of Goal Achieved: {Number(student.codewars.current.total / student.codewars.goal.total * 100).toFixed(2)}%</li>
+        </ul>
+        <ul>
             <h3>Scores</h3><br />
-          <p>Assignments:{student.cohort.scores.assignments}</p><br />
-          <p>Projects: {student.cohort.scores.projects}</p><br />
-          <p>Assessments: {student.cohort.scores.assignments}</p><br />
-        </div>
-        <div>
+          <li>Assignments:{student.cohort.scores.assignments * 100}%</li><br />
+          <li>Projects: {student.cohort.scores.projects * 100}%</li><br />
+          <li>Assessments: {student.cohort.scores.assignments * 100}%</li><br />
+        </ul>
+        <ul>
             <h3>Certifications</h3><br />
-            <p>Resume: {student.certifications.resume ? '✅' : '❌'}</p><br />
-          <p>Linkedin: {student.certifications.linkedin ? '✅' : '❌'}</p><br />
-          <p>Github: {student.certifications.githib ? '✅' : '❌'}</p><br />
-          <p>Mock Interview: {student.certifications.mockInterview ? '✅' : '❌'}</p>
+          <li>Resume: {student.certifications.resume ? '✅' : '❌'}</li><br />
+          <li>Linkedin: {student.certifications.linkedin ? '✅' : '❌'}</li><br />
+          <li>Github: {student.certifications.githib ? '✅' : '❌'}</li><br />
+          <li>Mock Interview: {student.certifications.mockInterview ? '✅' : '❌'}</li>
            <div>
             <p>Student is {student.certifications.resume === true && student.certifications.linkedin && student.certifications.github === true && student.certifications.mockInterview === true && student.codewars.current.total >= 600 ? 'Student is on track' : 'Student is not on Track'}</p>
            </div>
-        </div>
+        </ul>
         <div>
             <StudentNotes />
         </div>
