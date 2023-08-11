@@ -10,6 +10,12 @@ body{
     padding: 20px;
 }
 
+.total-count {
+  font-size: 18px;
+  color: #10c9da;
+  
+}
+
 .container{
     display: flex;
     justify-content: space-between;
