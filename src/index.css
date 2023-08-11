@@ -1,0 +1,92 @@
+html, body {
+    background-color: white;
+}
+.app-container {
+    display: flex;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Apply styles to the sidebar */
+  .sidebar {
+    flex: 1;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-right: 1px solid #ccc;
+  }
+  
+  /* Apply styles to the main content area */
+  .main-content {
+    flex: 3;
+    padding: 20px;
+  }
+  /* StudentCard.css */
+  
+  /* StudentCard.css */
+  
+  /* Apply styles to the student card */
+  .student-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .student-card img {
+    max-width: 80px;
+    margin-right: 10px;
+  }
+  
+  /* Create a container for the details on the right */
+  .student-details-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Apply styles to student details */
+  .student-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .student-email {
+    margin-bottom: 5px;
+    color: #666;
+  }
+  
+  .student-birthdate {
+    color: #666;
+  }
+  
+  /* Add hover effect to student card */
+  .student-card:hover {
+    background-color: #f7f7f7;
+  }
+  /* StudentDetails.css */
+  
+  /* Apply styles to the details container */
+  .details-on-students {
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  /* Apply styles to CodeWars, Scores, and Certifications lists */
+  .codeWars-List,
+  .scores-List,
+  .certification-List {
+    display: inline-block;
+    width: calc(33.33% - 10px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    vertical-align: top;
+    margin-right: 10px;
+  }
+  
+  /* Apply styles to student notes */
+  .student-notes {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+  }

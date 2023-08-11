@@ -4,7 +4,7 @@ import StudentCard from "./StudentCard";
 const StudentList = ({ students, selectedCohort }) => {
 const selectedStudents = !selectedCohort ? students : students.filter((student) => student.cohort.cohortCode === selectedCohort)
   return (
-    <div>
+    <div className="StudentList">
         {selectedStudents.map((student, index) => (
             <StudentCard key={index} student={student} />
           ))}

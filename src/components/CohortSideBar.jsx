@@ -14,7 +14,7 @@ const CohortSideBar = ({ setSelectedCohort, students, selectedCohort }) => {
     groupedByCohort[cohortCode].push(student);
   });
   return (
-    <div>
+    <div className="SideBar">
       {Object.entries(groupedByCohort).map(([cohortCode, students]) => (
         <div key={cohortCode}>
           <h3 onClick={() => setSelectedCohort(cohortCode)}>

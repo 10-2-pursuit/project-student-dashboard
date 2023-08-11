@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import students from "./data/data.json";
 import StudentList from "./components/StudentList";
 import CohortSideBar from "./components/CohortSideBar";
-import StudentNotes from "./components/StudentNotes";
 
 function App() {
   const [selectedCohort, setSelectedCohort] = useState(null);
 
   return (
-    <div>
+    <div className="app-container">
       <header>Student Dashboard</header>
       <div>
         <h1>Choose a Class by Start Date</h1>

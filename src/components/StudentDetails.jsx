@@ -9,26 +9,26 @@ const StudentDetails = ({student}) => {
     }
 
     return (
-        <div>
+        <div className='detailsOnStudents'>
             <button onClick={ toggleShowDetails }>
                 { !showDetails ? "Show More..": "Show Less.."}
             </button>
             {showDetails ? (
         <>
-        <ul>
+        <ul className='codeWars-List'>
           <h3>CodeWars</h3><br />
           <li>Current Total: <span>{student.codewars.current.total}</span></li><br />
           <li>Last Week: {student.codewars.current.lastWeek}</li><br />
           <li>Goal: {student.codewars.goal.total}</li>
           <li>Percent of Goal Achieved: {Number(student.codewars.current.total / student.codewars.goal.total * 100).toFixed(2)}%</li>
         </ul>
-        <ul>
+        <ul className='scores-List'>
             <h3>Scores</h3><br />
           <li>Assignments:{student.cohort.scores.assignments * 100}%</li><br />
           <li>Projects: {student.cohort.scores.projects * 100}%</li><br />
           <li>Assessments: {student.cohort.scores.assignments * 100}%</li><br />
         </ul>
-        <ul>
+        <ul className='certification-List'>
             <h3>Certifications</h3><br />
           <li>Resume: {student.certifications.resume ? '✅' : '❌'}</li><br />
           <li>Linkedin: {student.certifications.linkedin ? '✅' : '❌'}</li><br />
