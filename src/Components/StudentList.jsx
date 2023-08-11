@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Details from "./Details";
 
-export default function StudentList({ students }) {
+export default function StudentList({ students, selectedCohort }) {
   const [studentDetails, setStudentDetails] = useState(null);
 
   const total = students.length;
@@ -57,7 +57,7 @@ export default function StudentList({ students }) {
 
   return (
     <div className="student-list">
-      <h2>Students</h2>
+      <h2>{selectedCohort ? `${selectedCohort}` : "All Students"}</h2>
       <p>Total Students: {total} </p>
       <ul>
         {students.map((student) => (
