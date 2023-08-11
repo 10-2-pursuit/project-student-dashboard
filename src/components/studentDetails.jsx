@@ -3,7 +3,7 @@ import React from "react";
 import OneOnOneNotes from "./OneOnOneNotes";
 
 
-const StudentDetails = ({ student }) => {
+const StudentDetails = ({ student, onAddNote }) => {
   const [viewMore, setViewMore] = useState(false);
   const [notes, setNotes] = useState ([]);
 

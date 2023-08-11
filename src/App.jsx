@@ -25,8 +25,7 @@ const App = () => {
       <StudentList students={data} onSelectStudent={handleSelectedStudent} />
       {selectedStudent && (
         <div className="student-details">
-          <StudentDetails student={selectedStudent} onAddNote={addNote} />{" "}
-          {/* Pass the addNote function */}
+          {<StudentDetails student={selectedStudent} />}
         </div>
       )}
     </div>
