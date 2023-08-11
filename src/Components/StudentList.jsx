@@ -57,7 +57,11 @@ export default function StudentList({ students, selectedCohort }) {
 
   return (
     <div className="student-list">
-      <h2>{selectedCohort ? `${selectedCohort.replace(/(.*?)([0-9]+)/, "$1 $2")}` : "All Students"}</h2>
+      <h2>
+        {selectedCohort
+          ? `${selectedCohort.replace(/(.*?)([0-9]+)/, "$1 $2")}`
+          : "All Students"}
+      </h2>
       <p>Total Students: {total} </p>
       <ul>
         {students.map((student) => (
@@ -73,7 +77,8 @@ export default function StudentList({ students, selectedCohort }) {
                   <span className="track">Off Track</span>
                 )}{" "}
               </p>
-              {student.username} <br /> Birthday: {formatDate(student.dob)}
+              {student.username} <br />
+              <p>Birthday: {formatDate(student.dob)}</p>
               <br />
               <span onClick={() => toggleStudentDetails(student.id)}>
                 {studentDetails === student.id
@@ -82,7 +87,7 @@ export default function StudentList({ students, selectedCohort }) {
               </span>
             </p>
             {studentDetails === student.id ? (
-                <Details student={student} />
+              <Details student={student} />
             ) : null}
           </li>
         ))}

@@ -2,6 +2,7 @@ import { useState } from "react";
 export default function Details({ student }) {
 
   const [newNote, setNewNote] = useState({commenter: "", comment: ""});
+  const commentTotal = student.notes.length
 
   function handleAddNote() {
     const createNote = {commenter: newNote.commenter, comment: newNote.comment};
@@ -60,6 +61,7 @@ export default function Details({ student }) {
           <br />
           <button type="submit">Add Note</button>
         </form>
+        <p>Comments: {commentTotal}</p>
         <ul>
           {student.notes.map((person, index) => (
             <li key={index}>{person.commenter} says, "{person.comment}"</li>

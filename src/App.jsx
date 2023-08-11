@@ -10,6 +10,7 @@ function App() {
   const [students, setStudents] = useState(studentData)
   const cohorts = [...new Set(students.map(student => student.cohort.cohortCode))]
   const [selectedCohort, setSelectedCohort] = useState(null);
+  const [darkMode, setDarkMode] = useState(false)
 
   const sortCohorts = (cohortA, cohortB) => {
     const [seasonA, yearA] = cohortA.match(/\D+|\d+/g);
@@ -41,11 +42,13 @@ function App() {
   const showAllStudents = () => {
     setStudents(studentData);
   }
+  
 
   return (
-    <div>
+    <div className={darkMode ? "dark-mode" : "light-mode"} >
       <Header />
       <div className="container">
+        <button onClick={()=> setDarkMode(!darkMode)}>{darkMode ? "Light Mode" : "Dark Mode"}</button>
         <div className="content">
           <CohortFilter cohorts={sortedCohorts} selectedCohort={selectedCohort} setSelectedCohort={setSelectedCohort} onSelect={handleCohortSelect} onShowAll={showAllStudents} />
           <StudentList students={students} selectedCohort={selectedCohort} />
