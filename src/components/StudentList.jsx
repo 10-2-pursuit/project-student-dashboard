@@ -34,8 +34,8 @@ const StudentList = ({ students, onSelectStudent }) => {
       <div className="cohort-list">
   <h2>Available Cohorts</h2>
   <ul>
-    {readableCohortName.map((cohortNames, index) => (
-      <li key={index}>{cohortNames}</li>
+    {readableCohortName.map((cohortNamesSet, index) => (
+      <li key={index}>{cohortNamesSet}</li>
     ))}
   </ul>
 </div>
