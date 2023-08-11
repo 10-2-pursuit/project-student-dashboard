@@ -57,7 +57,7 @@ export default function StudentList({ students, selectedCohort }) {
 
   return (
     <div className="student-list">
-      <h2>{selectedCohort ? `${selectedCohort}` : "All Students"}</h2>
+      <h2>{selectedCohort ? `${selectedCohort.replace(/(.*?)([0-9]+)/, "$1 $2")}` : "All Students"}</h2>
       <p>Total Students: {total} </p>
       <ul>
         {students.map((student) => (

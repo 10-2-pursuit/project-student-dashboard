@@ -23,7 +23,6 @@ function App() {
 
     return parseInt(yearB, 10) - parseInt(yearA, 10);
   }
-
   const sortedCohorts = [...cohorts].sort(sortCohorts);
 
   const handleCohortSelect = (selectedCohort) => {

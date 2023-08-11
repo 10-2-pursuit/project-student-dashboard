@@ -33,11 +33,11 @@ export default function Details({ student }) {
 
         <div className="cert">
           <h3>Certifications</h3>
-          <p>Resume: {student.certifications.resume ? "✅" : "❌"}</p>
-          <p>LinkedIn: {student.certifications.linkedin ? "✅" : "❌"}</p>
-          <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
+          <p>Resume: {student.certifications.resume ? "✅" : "💀"}</p>
+          <p>LinkedIn: {student.certifications.linkedin ? "✅" : "💀"}</p>
+          <p>GitHub: {student.certifications.github ? "✅" : "💀"}</p>
           <p>
-            Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}
+            Mock Interview: {student.certifications.mockInterview ? "✅" : "💀"}
           </p>
         </div>
 
