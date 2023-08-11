@@ -1,22 +1,25 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Notes = ({handleFormSubmit, studentId}) => {
-    // console.log(StudentNotes)
+const Notes = ({handleFormSubmit, studentId, studentNotes}) => {
+    // console.log(studentNotes)
     // console.log(studentId)
-
-    // const [ comments, setComments] = useState(studentComments || {})
+    
     const [ newComment, setNewComment] = useState({
         commenterName: "",
         comment: ""
     })
 
+    // console.log(studentNotes[studentId])
+    
     const handleChange = (e) => {
         setNewComment({...newComment, 
         [e.target.id]: e.target.value
         })
-
     }
+
+    console.log(studentNotes[studentId])
+
     return (
         <div className="Notes">
             <h3> 1-on-1 Notes</h3>
@@ -38,7 +41,14 @@ const Notes = ({handleFormSubmit, studentId}) => {
                     <input type="submit" value="Add Note" />
               </fieldset>
             </form>
-            {/* {comments != {}} */}
+            <ul>
+                {studentNotes[studentId] ? studentNotes[studentId].map((comment) => (
+                    <li>
+                        {`${comment[0]} says, "${comment[1]}"`}
+                    </li>
+                )
+                ):null}
+            </ul>
         </div>
     );
 }

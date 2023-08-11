@@ -15,7 +15,6 @@ function App() {
 
   const handleUpdateStudentNotes = (newNotes) => {
     setStudentNotes(newNotes)
- 
   }
 
   const handleUpdateCohort = (newCohort) => {
@@ -29,7 +28,8 @@ function App() {
 
     if(studentNotes[e.target.studentId.value]){
       console.log("yeah")
-      thisStudentNotes = {
+      thisStudentNotes = { 
+        ...studentNotes,
         [e.target.studentId.value]: 
           [
             ...studentNotes[e.target.studentId.value],
@@ -40,6 +40,7 @@ function App() {
     }  else {
       console.log("nah")
       thisStudentNotes = {
+        ...studentNotes,
         [e.target.studentId.value]: 
           [
             [e.target.commenterName.value, e.target.comment.value]
@@ -47,7 +48,6 @@ function App() {
           
       }
     }
-
 
     // console.log(thisStudentNotes)
     handleUpdateStudentNotes(thisStudentNotes)
@@ -62,6 +62,7 @@ function App() {
     <Students 
       studentsData={studentsData} 
       selectedCohort={Cohort} 
+      studentNotes={studentNotes}
       handleFormSubmit={handleFormSubmit}
       updateStudentNotes={handleUpdateStudentNotes}
       />

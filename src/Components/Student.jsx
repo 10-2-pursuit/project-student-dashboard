@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import StudentDetails from './StudentDetails';
 
-const Student = ({student, handleFormSubmit}) => {
+const Student = ({student, handleFormSubmit, studentNotes}) => {
     const name = student.names
 
     const [ShowDetails, setShowDetails] = useState(false)
@@ -49,6 +49,7 @@ const Student = ({student, handleFormSubmit}) => {
                         certifications={student.certifications}
                         handleFormSubmit={handleFormSubmit}
                         studentId={student.id}
+                        studentNotes={studentNotes}
                     />
                 </>
                 ) : null}

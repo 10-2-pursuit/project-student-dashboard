@@ -6,7 +6,8 @@ const StudentDetails = ({
     codewars, 
     scores, 
     certifications, 
-    handleFormSubmit
+    handleFormSubmit,
+    studentNotes
 }) => {
 
     const convertPercent = (total, divide) => {
@@ -44,6 +45,7 @@ const StudentDetails = ({
             <Notes 
                 handleFormSubmit={handleFormSubmit}
                 studentId={studentId}
+                studentNotes={studentNotes}
             />
         </>
     );

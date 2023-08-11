@@ -1,7 +1,12 @@
 import React from 'react';
 import Student from './Student';
 
-const Students = ({studentsData, selectedCohort, handleFormSubmit}) => {
+const Students = ({
+    studentsData, 
+    selectedCohort, 
+    handleFormSubmit,
+    studentNotes,
+    }) => {
     // console.log(selectedCohort)
     // console.log(studentsData)
     
@@ -14,6 +19,7 @@ const Students = ({studentsData, selectedCohort, handleFormSubmit}) => {
                 <Student 
                     student={student}
                     handleFormSubmit={handleFormSubmit}
+                    studentNotes={studentNotes}
                 />
                 )}
             {/* <Student/> */}
