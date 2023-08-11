@@ -85,16 +85,25 @@
  }
 
 .Student img:hover {
-    width: 200px;
     transition: 250ms;
     border-radius: 100px;
 }
 
 .StudentInfo {
     /* grid-column: 2; */
-    display: grid;
+    display: flex;
+    padding-left: 10px;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
 }
+
+.StudentInfo h3 {
+    margin: 0px;
+}
+
 .ShowMore{
+    padding-left: 10px;
    text-decoration: underline;
    grid-row: 2;
    grid-column: 2;
@@ -106,7 +115,8 @@
     grid-row: 1;
     grid-column: 3;
     justify-content: right;
-    align-items: center;
+    align-items: top;
+    
     /* text-align: center; */
 }
 

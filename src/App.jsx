@@ -13,12 +13,12 @@ function App() {
   const [studentNotes, setStudentNotes] = useState({})
 
 
-  const updateStudentNotes = (newNotes) => {
+  const handleUpdateStudentNotes = (newNotes) => {
     setStudentNotes(newNotes)
  
   }
 
-  const updateCohort = (newCohort) => {
+  const handleUpdateCohort = (newCohort) => {
     setCohort(newCohort)
   }
 
@@ -49,8 +49,8 @@ function App() {
     }
 
 
-    console.log(thisStudentNotes)
-    updateStudentNotes(thisStudentNotes)
+    // console.log(thisStudentNotes)
+    handleUpdateStudentNotes(thisStudentNotes)
   }
 
   
@@ -63,7 +63,7 @@ function App() {
       studentsData={studentsData} 
       selectedCohort={Cohort} 
       handleFormSubmit={handleFormSubmit}
-      updateStudentNotes={updateStudentNotes}
+      updateStudentNotes={handleUpdateStudentNotes}
       />
   </>
   );

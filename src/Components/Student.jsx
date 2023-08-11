@@ -30,12 +30,12 @@ const Student = ({student, handleFormSubmit}) => {
                 <h3>{`${name.preferredName} ${name.middleName} ${name.surname}`}</h3>
                 <span>{`${student.username}`}</span>
                 <span><span className='SpanGreen'>Birthday: </span>{`${student.dob}`}</span>
+            </div>
                 {onTrack ? (
                    <span className='SpanGreen onTrack'>
                         On Track to Graduate
                    </span>
                 ): null }
-            </div>
             <span 
                     className='SpanGreen ShowMore'
                     onClick={handleShowDetails}
