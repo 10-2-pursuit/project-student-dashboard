@@ -30,6 +30,7 @@ const StudentList = ({ students, onSelectStudent }) => {
             </button>
           </div>
         ))}
+         <br />
       </ul>
       <div className="cohort-list">
   <h2>Available Cohorts</h2>
