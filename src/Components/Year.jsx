@@ -12,7 +12,9 @@ const Year = ({
     // console.log(name)
 
     return (
-        <div onClick={() => handleUpdateCohort(name)} className='Year'>
+        <div 
+            onClick={() => handleUpdateCohort(name)} 
+            className='Year'>
             <h5>{readableYear(name)}</h5>
         </div>
     );
