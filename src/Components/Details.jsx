@@ -29,7 +29,6 @@ export default function Details({ student }) {
           <p>Current Total: {student.codewars.current.total}</p>
           <p>Current Last Week: {student.codewars.current.lastWeek}</p>
           <p>Goal Total: {student.codewars.goal.total}</p>
-          <p>Goal Last Week: {student.codewars.goal.lastWeek}</p>
         </div>
 
         <div className="cert">
