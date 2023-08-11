@@ -3,7 +3,7 @@ import React from "react";
 import OneOnOneNotes from "./OneOnOneNotes";
 
 
-const StudentDetails = ({ student, onAddNote }) => {
+const StudentDetails = ({student}) => {
   const [viewMore, setViewMore] = useState(false);
   const [notes, setNotes] = useState ([]);
 
@@ -67,13 +67,13 @@ const StudentDetails = ({ student, onAddNote }) => {
       <OneOnOneNotes onAddNote={addNote} />
       <div className="notes-list">
         <h4>Notes:</h4>
-        <ul>
+        <ol>
             {notes.map((note, index) => (
             <li key={index}>
                 <strong>{note.commenter}:</strong>{note.comment}
                 </li>
           ))}
-        </ul>
+        </ol>
       </div>
     </div>
   );

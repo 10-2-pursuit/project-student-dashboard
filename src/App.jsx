@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import StudentList from "./components/StudentList";
 import StudentDetails from "./components/studentDetails";
-import OneOnOneNotes from "./components/OneOnOneNotes";
 import data from "./data/data.json";
 
 const App = () => {
