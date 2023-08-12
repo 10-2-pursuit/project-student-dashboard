@@ -5,25 +5,35 @@ import CohortSideBar from "./components/CohortSideBar";
 
 function App() {
   const [selectedCohort, setSelectedCohort] = useState(null);
+  const [notes, setNotes] = useState([]);
+
+  const handleNotes = (note) => {
+    setNotes([...notes, note]);
+  };
 
   return (
     <div className="app-container">
       <header>
-      <h1 id="heading">Student Dashboard</h1>
+        <h1 id="heading">Student Dashboard</h1>
       </header>
-        <aside className="sideBar">
-          <h1 className="classchoice">Choose a Class by Start Date</h1>
-          <h3 className="allcohorts" onClick={() => setSelectedCohort(null)}>
-            All Students
-          </h3>
-          <CohortSideBar
-            students={students}
-            setSelectedCohort={setSelectedCohort}
-            selectedCohort={selectedCohort}
-          />
-        </aside>
+      <aside className="sideBar">
+        <h1 className="classchoice">Choose a Class by Start Date</h1>
+        <h3 className="allcohorts" onClick={() => setSelectedCohort(null)}>
+          All Students
+        </h3>
+        <CohortSideBar
+          students={students}
+          setSelectedCohort={setSelectedCohort}
+          selectedCohort={selectedCohort}
+        />
+      </aside>
       <div className="StudentList">
-        <StudentList students={students} selectedCohort={selectedCohort} />
+        <StudentList
+          handleNotes={handleNotes}
+          notes={notes}
+          students={students}
+          selectedCohort={selectedCohort}
+        />
       </div>
     </div>
   );
