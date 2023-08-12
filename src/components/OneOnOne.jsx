@@ -4,9 +4,9 @@
  * will render 1 on 1 comments & its form. 
  * 
  * @param {React.prop} param0 
- *      @property comments - a state hook to store comments
- *      @property setComments - a setter for the comments
- *      @property studentId - unique student ids
+ *      @property {Object[]} comments - a state hook for comments
+ *      @property {} setComments - a setter for comments
+ *      @property {string} studentId - a unique string for each student's id
  * 
  */
 

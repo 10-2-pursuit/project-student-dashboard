@@ -7,7 +7,11 @@ import OneOnOne from "./OneOnOne";
  * A react component to render scores and certifications
  * 
  * @param {React.props} param0 
- * @returns 
+ *      @property {Object} codewars - an object which is holding codewars scores
+ *      @property {Object} certification - an object which is holding certification info
+ *      @property {Object[]} comments - a state hook for comments
+ *      @property {} setComments - a setter for comments
+ *      @property {string} studentId - a unique string for each student's id
  */
 export default function StudentDetail({codewars, certifications, cohort, comments, setComments, studentId}){
     const [toggleDetail, setToggleDetail] = useState(false);

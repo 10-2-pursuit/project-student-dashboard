@@ -4,7 +4,11 @@
  * render page for menu button. Filtering, light&dark mode will be handeled here.
  * 
  * @param {React.props} param0 -  
- * @returns 
+ *      @property {Object[]} cohortList - a state hook to filter student list
+ *      @property {*} setStudentList - a setter for cohortList
+ *      @property {Object[]}data - json file
+ *      @property {boolean}darkmode - a state hook to toggle dark mode
+ *      @property {*} setDarkmode - a setter for darkmode
  */
 export default function CohortList({cohortList, setStudentList, data, darkmode, setDarkmode}){
     /**
