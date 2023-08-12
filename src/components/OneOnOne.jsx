@@ -19,8 +19,13 @@ export default function OneOnOne({comments, setComments, studentId}){
      */
     function updateComments(e){
         const form = document.getElementById(e.target.id);
-        const temp = (comments[studentId] ? [[form.writer.value, form.comment.value]] : Object.assign(comments[studentId],[form.writer.value, form.comment.value]));
-        setComments({...comments, [studentId]:[...comments[studentId],temp]});
+        if(form.writer.value.trim().length != 0 && form.comment.value.trim().length != 0){
+            const temp = (comments[studentId] ? [[form.writer.value, form.comment.value]] : Object.assign(comments[studentId],[form.writer.value, form.comment.value]));
+            setComments({...comments, [studentId]:[...comments[studentId],temp]});
+        }
+        else{
+            alert("The comment & the writer fields cannot be empty.")
+        }
         form.reset();
     }
 
