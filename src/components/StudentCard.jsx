@@ -1,5 +1,7 @@
 import React from "react"
 import StudentDetails from "./StudentDetails";
+import Card from 'react-bootstrap/Card';
+
 
 export default function StudentCard({ student }) {
     const { names, username, dob, profilePhoto } = student;

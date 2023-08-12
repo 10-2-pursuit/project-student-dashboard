@@ -19,7 +19,7 @@ const StudentDetails = ({student}) => {
           <h5>CodeWars</h5><br />
           <li>Current Total: <span>{student.codewars.current.total}</span></li><br />
           <li>Last Week: {student.codewars.current.lastWeek}</li><br />
-          <li>Goal: {student.codewars.goal.total}</li>
+          <li>Goal: {student.codewars.goal.total}</li><br />
           <li>Percent of Goal Achieved: {Number(student.codewars.current.total / student.codewars.goal.total * 100).toFixed(2)}%</li>
         </ul>
         <ul className='scores-List'>
@@ -35,10 +35,10 @@ const StudentDetails = ({student}) => {
           <li>Github: {student.certifications.githib ? '✅' : '❌'}</li><br />
           <li>Mock Interview: {student.certifications.mockInterview ? '✅' : '❌'}</li>
            <div>
-            <h5 id='tracking'>{student.certifications.resume === true && student.certifications.linkedin && student.certifications.github === true && student.certifications.mockInterview === true && student.codewars.current.total >= 600 ? 'On Track' : 'Off Track'}</h5>
+            <h5 id='tracking'>{ (student.certifications.resume === true) && (student.certifications.linkedin === true) && (student.certifications.github === true) && (student.certifications.mockInterview === true) && (student.codewars.current.total > 600) ? 'On Track' : 'Off Track' }</h5>
            </div>
+            <StudentNotes />
         </ul>
-        
         </div>
         ) : null}
         </div>

@@ -70,3 +70,7 @@ li {
 #tracking {
     color: red;
 }
+aside {
+    margin-left: 40px;
+    padding: 10px;
+}

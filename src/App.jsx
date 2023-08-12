@@ -9,15 +9,19 @@ function App() {
   return (
     <div className="app-container">
       <h1 id="heading">Student Dashboard</h1>
-      <div className="SideBar">
-        <h1>Choose a Class by Start Date</h1>
-        <h3 onClick={() => setSelectedCohort(null)}>All Students</h3>
-      <div>
-      <CohortSideBar students={students} setSelectedCohort={setSelectedCohort} selectedCohort={selectedCohort} />
-      </div>
-      </div>
+        <aside className="sideBar">
+          <h1>Choose a Class by Start Date</h1>
+          <h3 className="allcohorts" onClick={() => setSelectedCohort(null)}>
+            All Students
+          </h3>
+          <CohortSideBar
+            students={students}
+            setSelectedCohort={setSelectedCohort}
+            selectedCohort={selectedCohort}
+          />
+        </aside>
       <div className="StudentList">
-      <StudentList students={students} selectedCohort={selectedCohort} />
+        <StudentList students={students} selectedCohort={selectedCohort} />
       </div>
     </div>
   );
