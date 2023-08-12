@@ -14,7 +14,7 @@ export default function StudentCard({ student }) {
             <img src={profilePhoto} alt={`${firstName} ${lastName}`} />
             <div className="student-details-container">
             <h5>{`${firstName} ${middleInitial} ${lastName}`}</h5>
-            <p>Email: {username}</p>
+            <p>{username}</p>
             <p>Birthday: {dob}</p>
             <StudentDetails student={student}/>
             </div>

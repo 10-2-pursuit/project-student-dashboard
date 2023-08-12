@@ -15,15 +15,20 @@ const CohortSideBar = ({ setSelectedCohort, students, selectedCohort }) => {
   });
   return (
     <div>
-      {Object.entries(groupedByCohort).map(([cohortCode, students]) => (
-        <div key={cohortCode}>
-          <h3 className="cohortSelect" onClick={() => setSelectedCohort(cohortCode)}>
-            {cohortCode} {selectedCohort === cohortCode ? "(Selected)" : ""}
-          </h3>
-        </div>
-      ))}
+      {Object.entries(groupedByCohort).map(([cohortCode, students]) => {
+        const match = cohortCode.match(/([a-zA-Z]+)(\d+)/);
+        const wordCohort = match[1];
+        const cohortYear = match[2];
+        
+        return (
+          <div key={cohortCode}>
+            <h3 className="cohortSelect" onClick={() => setSelectedCohort(cohortCode)}>
+              {wordCohort} {cohortYear} {selectedCohort === cohortCode ? "(Selected)" : ""}
+            </h3>
+          </div>
+        );
+      })}
     </div>
   );
-};
-
+}
 export default CohortSideBar;
