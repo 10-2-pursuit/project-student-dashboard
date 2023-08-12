@@ -1,6 +1,14 @@
 import { useState } from "react";
 import OneOnOne from "./OneOnOne";
 
+/**
+ * StudentDetail()
+ * ----------------------------------
+ * A react component to render scores and certifications
+ * 
+ * @param {React.props} param0 
+ * @returns 
+ */
 export default function StudentDetail({codewars, certifications, cohort, comments, setComments, studentId}){
     const [toggleDetail, setToggleDetail] = useState(false);
     const track = ((certifications.resume)&&(certifications.github)&&(certifications.linkedin)&&(certifications.mockInterview)&&(codewars.current.total > 600));

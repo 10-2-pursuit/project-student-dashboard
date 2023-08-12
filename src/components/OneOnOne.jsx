@@ -1,11 +1,35 @@
+/**
+ * OneOnOne()
+ * --------------------------------
+ * will render 1 on 1 comments & its form. 
+ * 
+ * @param {React.prop} param0 
+ *      @property comments - a state hook to store comments
+ *      @property setComments - a setter for the comments
+ *      @property studentId - unique student ids
+ * 
+ */
+
 export default function OneOnOne({comments, setComments, studentId}){
+    /**
+     * updateComments()
+     * ---------------------------------
+     * function to update comments state in App.jsx
+     * @param {event} e - event from submitting a form 
+     */
     function updateComments(e){
         const form = document.getElementById(e.target.id);
-        let temp = (comments[studentId] ? [[form.writer.value, form.comment.value]] : Object.assign(comments[studentId],[form.writer.value, form.comment.value]));
+        const temp = (comments[studentId] ? [[form.writer.value, form.comment.value]] : Object.assign(comments[studentId],[form.writer.value, form.comment.value]));
         setComments({...comments, [studentId]:[...comments[studentId],temp]});
         form.reset();
     }
 
+    /**
+     * submitHandler()
+     * -----------------------------------
+     * submit event handler for a form. 
+     * @param {event} e 
+     */
     function submitHandler(e){
         e.preventDefault();
         updateComments(e);

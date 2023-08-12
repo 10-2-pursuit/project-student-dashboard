@@ -1,5 +1,13 @@
 import {useEffect, useState} from 'react';
 
+/**
+ * Track()
+ * ----------------------------
+ * A react component to render single tracking status for Pursuit curriculum.
+ * 
+ * @param {React.props} param0 
+ * 
+ */
 export default function Track({codewars, certifications}){
     const [track, setTrack] = useState();
     useEffect(()=>{
