@@ -8,7 +8,9 @@ function App() {
 
   return (
     <div className="app-container">
+      <header>
       <h1 id="heading">Student Dashboard</h1>
+      </header>
         <aside className="sideBar">
           <h1>Choose a Class by Start Date</h1>
           <h3 className="allcohorts" onClick={() => setSelectedCohort(null)}>
