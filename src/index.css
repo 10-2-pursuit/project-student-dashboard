@@ -83,10 +83,26 @@ button {
     border-radius: 5px;
     width: 130px;
     cursor: pointer;
-    height: 50px;
+    height: 20px;
     transition: all .5s ease;
     justify-content: center;
     align-items: center;
     font-size: 16px;
     font-weight: bold;
+}
+button:hover {
+    background-color: rgb(5, 3, 54);
+}
+.cohortSelect, .allcohorts {
+    color: rgb(6, 191, 68);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 20px;
+    transition: all .5s ease;
+    font-weight: bold;
+}
+.cohortSelect:hover, .allcohorts:hover {
+    color: rgb(5, 118, 104);
 }
