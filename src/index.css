@@ -74,3 +74,19 @@ aside {
     margin-left: 40px;
     padding: 10px;
 }
+button {
+    margin: 0 10px;
+    display: flex;
+    color: rgb(69, 93, 250);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 130px;
+    cursor: pointer;
+    height: 50px;
+    transition: all .5s ease;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}

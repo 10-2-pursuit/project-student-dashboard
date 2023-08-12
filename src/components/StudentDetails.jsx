@@ -32,7 +32,7 @@ const StudentDetails = ({student}) => {
             <h5>Certifications</h5><br />
           <li>Resume: {student.certifications.resume ? '✅' : '❌'}</li><br />
           <li>Linkedin: {student.certifications.linkedin ? '✅' : '❌'}</li><br />
-          <li>Github: {student.certifications.githib ? '✅' : '❌'}</li><br />
+          <li>Github: {student.certifications.github ? '✅' : '❌'}</li><br />
           <li>Mock Interview: {student.certifications.mockInterview ? '✅' : '❌'}</li>
            <div>
             <h5 id='tracking'>{ (student.certifications.resume === true) && (student.certifications.linkedin === true) && (student.certifications.github === true) && (student.certifications.mockInterview === true) && (student.codewars.current.total > 600) ? 'On Track' : 'Off Track' }</h5>
