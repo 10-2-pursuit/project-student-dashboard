@@ -10,10 +10,12 @@ import {useEffect, useState} from 'react';
  */
 export default function Track({codewars, certifications}){
     const [track, setTrack] = useState();
+
     useEffect(()=>{
         const onTrack = onOrOff();
         setTrack(onTrack);
     },[]);
+    
     function onOrOff(){
         if(!certifications.resume){
             return false;

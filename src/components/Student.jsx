@@ -34,7 +34,7 @@ export default function Student({ student, comments, setComments, darkmode }){
                 </h4>
                 <span>{ student.username }</span><br />
                 <span>{ student.dob }</span><br />
-                <span>{showDetail ? (<span onClick={()=>detailHandler()}>Show less</span>) : (<span onClick={()=>detailHandler()}>Show more</span>)}</span>
+                <div>{showDetail ? (<button className="detail_button" onClick={()=>detailHandler()}>Show less</button>) : (<button className="detail_button" onClick={()=>detailHandler()}>Show more</button>)}</div>
             </div>
             <>
                 {showDetail ? <StudentDetail codewars={ student.codewars } certifications={ student.certifications } cohort={ student.cohort } comments={comments} setComments={ setComments } studentId={ student.id }/> : null}

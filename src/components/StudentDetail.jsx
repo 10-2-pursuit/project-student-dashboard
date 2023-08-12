@@ -45,7 +45,7 @@ export default function StudentDetail({codewars, certifications, cohort, comment
                 </ul>
             </div>
             <div className="one_on_one">
-                <span onClick={()=>toggleDetailHandler()}>{toggleDetail ? (<>Hide 1:1</>) : (<>Show 1:1</>)}</span>
+                <button className="ooo_button" onClick={()=>toggleDetailHandler()}>{toggleDetail ? (<>Hide 1:1</>) : (<>Show 1:1</>)}</button>
                 {toggleDetail ? (<>
                                     <p>
                                         {comments[studentId].map((cmt)=>cmt.map((elem,index)=>(<>
