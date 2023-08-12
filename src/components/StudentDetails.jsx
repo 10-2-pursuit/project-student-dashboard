@@ -14,35 +14,33 @@ const StudentDetails = ({student}) => {
                 { !showDetails ? "Show More..": "Show Less.."}
             </button>
             {showDetails ? (
-        <>
+        <div className='certs-scores-codewars'>
         <ul className='codeWars-List'>
-          <h3>CodeWars</h3><br />
+          <h5>CodeWars</h5><br />
           <li>Current Total: <span>{student.codewars.current.total}</span></li><br />
           <li>Last Week: {student.codewars.current.lastWeek}</li><br />
           <li>Goal: {student.codewars.goal.total}</li>
           <li>Percent of Goal Achieved: {Number(student.codewars.current.total / student.codewars.goal.total * 100).toFixed(2)}%</li>
         </ul>
         <ul className='scores-List'>
-            <h3>Scores</h3><br />
+            <h5>Scores</h5><br />
           <li>Assignments:{student.cohort.scores.assignments * 100}%</li><br />
           <li>Projects: {student.cohort.scores.projects * 100}%</li><br />
           <li>Assessments: {student.cohort.scores.assignments * 100}%</li><br />
         </ul>
         <ul className='certification-List'>
-            <h3>Certifications</h3><br />
+            <h5>Certifications</h5><br />
           <li>Resume: {student.certifications.resume ? '✅' : '❌'}</li><br />
           <li>Linkedin: {student.certifications.linkedin ? '✅' : '❌'}</li><br />
           <li>Github: {student.certifications.githib ? '✅' : '❌'}</li><br />
           <li>Mock Interview: {student.certifications.mockInterview ? '✅' : '❌'}</li>
            <div>
-            <p>Student is {student.certifications.resume === true && student.certifications.linkedin && student.certifications.github === true && student.certifications.mockInterview === true && student.codewars.current.total >= 600 ? 'Student is on track' : 'Student is not on Track'}</p>
+            <h5 id='tracking'>{student.certifications.resume === true && student.certifications.linkedin && student.certifications.github === true && student.certifications.mockInterview === true && student.codewars.current.total >= 600 ? 'On Track' : 'Off Track'}</h5>
            </div>
         </ul>
-        <div>
-            <StudentNotes />
+        
         </div>
-        </>
-      ) : null}
+        ) : null}
         </div>
     );
 }
