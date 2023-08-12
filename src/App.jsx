@@ -1,19 +1,25 @@
-import OntrackStatus from "./components/OntrackStatus";
-import SeasonClass from "./components/SeasonClass";
-import StudentList from "./components/StudentList";
-import data from "./data/data.json";
 import React, { useState } from "react";
+import data from "./data/data.json";
+import StudentList from "./components/StudentList";
+import SeasonClass from "./components/SeasonClass";
 
 function App() {
   const [filteredStudents, setFilteredStudents] = useState(data);
+  
+  const handleAddNote = (studentId, commenterName, comment) => {
+    const updatedStudents = filteredStudents.map((student) =>
+      student.id === studentId
+        ? { ...student, notes: [...student.notes, { commenterName, comment }] }
+        : student
+    );
+    setFilteredStudents(updatedStudents);
+  };
 
   return (
     <div className="body">
-      <h1>Choose a Class By Student</h1>
-      <h1 className="head">Student Dashboard</h1>
-      <StudentList students={filteredStudents} />
       <SeasonClass students={data} setFilteredStudents={setFilteredStudents} />
-      <OntrackStatus />
+      <h1 className="head">Student Dashboard</h1>
+      <StudentList students={filteredStudents} handleAddNote={handleAddNote} />
     </div>
   );
 }

@@ -1,120 +1,97 @@
-.head {
+
+
+
+body, h1, h2, h3, p, button, input, textarea {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: Arial, sans-serif;
+  }
+  
+  .body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  .head {
     text-align: center;
-    background-color: rgba(0, 179, 255, 0.341);
-    height: 100px;
-    width: 500px;
-    display: grid;
-    grid-area: span;
-}
-
-.body {
-    display: grid;
-    grid-template: 
-            "a a a" 40px
-            "b c c" 40px
-            "b c c" 40px / 1fr 1fr 1fr;
-           
-}
-
-.student-list {
+    margin-bottom: 20px;
+  }
+  
+  .student-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 16px;
-    padding: 16px;
-   
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 20px;
   }
   
   .student-card {
-    background-color: rgba(189, 19, 19, 0.502); 
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin: 16px;
-    display: grid;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: calc(33.33% - 20px);
+    display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: left;
-    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
   }
   
-  
-  .student-card img {
-    width: 120px;
-    
+  .student-card:hover {
+    transform: translateY(-5px);
   }
-  .details {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
+  
+  .student-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .additional-info {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .spring25 {
-    background-color: lightgreen;
-    padding: 10px;
-    cursor: pointer;
-    width: 300px;
-    display: grid;
+    transition: background-color 0.3s ease-in-out;
   }
   
-  .spring26 {
-    background-color: lightblue;
-    padding: 10px;
-    cursor: pointer;
-    width: 300px;
-    display: grid;
+  .additional-info:hover {
+    background-color: #0056b3;
   }
   
-  .summer25 {
-    background-color: gold;
+  .student-details {
+    margin-top: 10px;
+    background-color: #f9f9f9;
     padding: 10px;
-    cursor: pointer;
-    width: 300px;
-    display: grid;
+    border-radius: 5px;
   }
   
-  .summer26 {
-    background-color: lightcoral;
-    padding: 10px;
-    cursor: pointer;
-    width: 300px;
-    display: grid;
+  .one-on-one-section {
+    margin-top: 20px;
   }
   
-  .fall25 {
-    background-color: orange;
-    padding: 10px;
-    cursor: pointer;
-    width: 300px;
-    display: grid;
+  .notes-list {
+    margin-top: 10px;
   }
   
-  .fall26 {
-    background-color: darkorange;
-    padding: 10px;
-    cursor: pointer;
-    width: 300px;
-    display: grid;
+  .note {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
   }
-  
-  .winter25 {
-    background-color: lightsteelblue;
-    padding: 10px;
-    cursor: pointer;
-    width: 300px;
-    display: grid;
+  .title {
+    background-color: #007bff8b;
+    text-align: center;
+    
   }
-  
-  .winter26 {
-    background-color: lightpink;
-    padding: 10px;
+ h2 {
+    text-align: center;
     cursor: pointer;
-    width: 300px;
-    display: grid;
-  }
+    background-color: aqua;
+ }

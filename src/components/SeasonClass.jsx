@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-
-const SeasonClass = ({ students, setFilteredStudents }) => {
+ import React from "react";
+ 
+ const SeasonClass = ({ students, setFilteredStudents }) => {
   const handleFilterChange = (cohortCode) => {
     const filteredStudents = students.filter(
       (student) => student.cohort.cohortCode === cohortCode
@@ -10,6 +10,7 @@ const SeasonClass = ({ students, setFilteredStudents }) => {
 
   return (
     <div>
+        <h1 className="title">Choose a Class By Season</h1>
       <h2 className="spring25" onClick={() => handleFilterChange("Spring2025")}>
         Class Spring 2025
       </h2>
