@@ -22,9 +22,12 @@ const App = () => {
  const filteredStudents = selectedCohort 
  ? data.filter((student) => student.cohort.cohortCode === selectedCohort) : data; 
 
+ const cohortTitle = selectedCohort ? `${selectedCohort}` : `All Cohorts`;
+
   return (
     <div className="dashboard">
-      <h1>DashBoard</h1>
+      <header>DashBoard</header>
+      <h1>{cohortTitle}</h1>
       <p className="total-count">Total students: {filteredStudents.length}</p>{/*Display Total Count of Students */}
       <div className="container">
       <StudentList 

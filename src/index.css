@@ -7,6 +7,7 @@ body {
 .dashboard {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -23,12 +24,19 @@ body {
   margin: 0 auto;
 }
 
-.student-list {
+.student-list, 
+.cohort-list {
   padding: 20px;
-  /* border-left: 1px solid #ccc; */
+  border: 1px solid #ccc;
+  border-radius: 8px;
   box-sizing: border-box;
   overflow: auto;
 }
+
+.student-list{
+  flex: 1;
+}
+
 
 .student img {
   width: 50px;
@@ -58,15 +66,17 @@ body {
   padding: 20px;
   box-sizing: border-box;
 }
-.cohort-list {
-  padding: 20px;
-  box-sizing: border-box;
-  overflow: auto;
-}
+
 
 .cohort-list ul {
   list-style: none;
   padding: 0;
+  padding: 0;
+}
+
+.cohort-list {
+  flex: 0.4; 
+  margin-right: 20px; 
 }
 
 .cohort-item {
@@ -91,6 +101,7 @@ body {
 
 .additional-info {
   border: 1px solid #ccc;
+  border-radius: 8px;
   padding: 20px;
   background-color: #f8f8f8;
   margin-top: 20px;

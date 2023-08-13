@@ -1,12 +1,7 @@
 import React from "react";
-// import { useState } from "react";
 
 const StudentList = ({ students, onSelectStudent }) => {
  
-  const cohortNames = [
-    ...new Set(students.map((student) => student.cohort.cohortCode))
-  ];
-
   return (
     <div className="student-list">
       <h2>All Students</h2>
@@ -23,6 +18,7 @@ const StudentList = ({ students, onSelectStudent }) => {
             <p>UserName: {student.username}</p>
             <br />
             <p>Birthday: {student.dob}</p>
+            <br />
             <button onClick={() => onSelectStudent(student)}>
               Show Student
             </button>
