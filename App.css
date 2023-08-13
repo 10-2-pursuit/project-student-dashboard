@@ -50,3 +50,15 @@ header {
 .student img {
   width: 100px;
 }
+
+.cohort:hover {
+  color: red;
+}
+
+img:hover {
+  border: 1px solid red;
+}
+
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
