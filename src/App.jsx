@@ -11,6 +11,7 @@ function App() {
 
   const [Cohort, setCohort] = useState("All Students")
   const [studentNotes, setStudentNotes] = useState({})
+  const [darkMode, setDarkMode] = useState(false)
 
 
   const handleUpdateStudentNotes = (newNotes) => {
@@ -63,9 +64,15 @@ function App() {
     return isYear ? name : `${season} ${year}`
   }
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
+
   return (
-  <>
-    <Header/>
+  <div className={`TopLevel ${darkMode ? `DarkMode`: ``}`}>
+    <Header
+      toggleDarkMode={toggleDarkMode}
+      />
     <Years 
       studentsData={studentsData}
       handleUpdateCohort={handleUpdateCohort}
@@ -79,7 +86,7 @@ function App() {
       updateStudentNotes={handleUpdateStudentNotes}
       readableYear={readableYear}
       />
-  </>
+  </div>
   );
 }
 

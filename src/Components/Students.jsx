@@ -28,8 +28,8 @@ const Students = ({
 
     return (
         <div className='Students'>
-            <h3>{readableYear(selectedCohort)}</h3>
-            <h4>Total Students: <span className='SpanGreen'>{filteredStudents.length}</span></h4>
+            <h3 className='CohortStats'>{readableYear(selectedCohort)}</h3>
+            <h4 className='CohortStats'>{`Total Students: `}<span className='SpanGreen'>{`${filteredStudents.length}`}</span></h4>
 
             {studentsData.map((student) => { 
                 return selectedCohort == "All Students" 
