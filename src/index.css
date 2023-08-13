@@ -1,4 +1,4 @@
-body {
+body,html {
   background-image: url(../assets/backgroun\ classroom.jpeg);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -25,6 +25,9 @@ header {
   color: white;
   position: sticky;
   top: 0;
+  font-family: cursive;
+  text-decoration: underline;
+  font-weight: bold;
 }
 li {
   list-style: none;
