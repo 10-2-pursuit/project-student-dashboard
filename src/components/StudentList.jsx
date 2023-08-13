@@ -9,6 +9,7 @@ const StudentList = ({ students, selectedCohort, handleNotes, notes }) => {
       );
   return (
     <div>
+        <h4>Total Students: {students.length}</h4>
       {selectedStudents.map((student, index) => (
         <StudentCard
           handleNotes={handleNotes}

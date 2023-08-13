@@ -1,10 +1,11 @@
 body {
-  background-color: rgb(227, 224, 224);
+  background-image: url(../assets/backgroun\ classroom.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .app-container {
   display: grid;
   grid-template-columns: 3fr 3fr;
-  grid-gap: 50px;
   grid-template-areas:
     "header header"
     "cohort students"
@@ -20,104 +21,121 @@ header {
   height: 70px;
   text-align: center;
   box-sizing: border-box;
-  background-color: rgb(36, 214, 36);
+  background-image:  url(../assets/blackboard.jpeg);
+  color: white;
+  position: sticky;
+  top: 0;
 }
 li {
-    list-style: none;
+  list-style: none;
 }
 .studentcard {
-    background-color: white;
-    width: 100%;
-    min-height: 100px;
-    box-shadow: 2px 2px 4px #000;
-    border-radius: 10px;
-    padding: 1em 5% 1em 1em;
-    margin: 9px;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-areas:
-        "image studentInfo"
-        "details details";
+  background-color: white;
+  width: 100%;
+  min-height: 100px;
+  box-shadow: 2px 2px 4px #000;
+  border-radius: 10px;
+  padding: 1em 5% 1em 1em;
+  margin: 9px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas:
+    "image studentInfo"
+    "details details";
 }
 .studentcard > img {
-    max-width: 80px;
-    margin-left: 10px;
+  max-width: 80px;
+  margin-left: 10px;
 }
 .student-details-container {
-    grid-area: studentInfo;
-    text-align: right;
+  grid-area: studentInfo;
+  text-align: right;
 }
 .detailsOnStudents {
-    grid-area: details;
-    display: grid;
-    grid-template-areas: 
+  grid-area: details;
+  display: grid;
+  grid-template-areas:
     "codewars"
     "scores"
     "comments";
-    text-align: center;
+  text-align: center;
 }
 .certs-scores-codewars {
-    border: solid black 1px;
-    grid-area: scores;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    text-align: left;
+  border: solid black 1px;
+  grid-area: scores;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
 }
 .commentForm {
-    border: solid 1px black;
-    grid-area: comments;
-    text-align: left;
+  border: solid 1px black;
+  grid-area: comments;
+  text-align: left;
+  display: flex;
+  flex-direction: column
 }
 #tracking {
-    color: red;
+  color: red;
 }
 aside {
-    margin-left: 40px;
-    padding: 10px;
+  padding: 10px;
 }
 button {
-    margin: 0 10px;
-    display: flex;
-    color: rgb(6, 191, 68);
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    width: 130px;
-    cursor: pointer;
-    height: 20px;
-    transition: all .5s ease;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
+  margin: 0 10px;
+  display: flex;
+  color: rgb(6, 191, 68);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: 130px;
+  cursor: pointer;
+  height: 20px;
+  transition: all 0.5s ease;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
 }
 button:hover {
-    background-color: rgb(5, 3, 54);
+  background-color: rgb(5, 3, 54);
 }
-.cohortSelect, .allcohorts {
-    color: rgb(6, 191, 68);
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    height: 20px;
-    transition: all .5s ease;
-    font-weight: bold;
-    text-decoration: underline;
+.cohortSelect,
+.allcohorts {
+  color: rgb(6, 191, 68);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 20px;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  text-decoration: underline;
+  position: sticky;
+  top: 130px;
+  left: 0;
 }
-.cohortSelect:hover, .allcohorts:hover {
-    color: rgb(5, 118, 104);
+.cohortSelect:hover,
+.allcohorts:hover {
+  color: rgb(5, 118, 104);
 }
 .sideBar {
-    width: 70%;
-    max-height: 500px;
-    box-shadow: 2px 2px 4px #000;
-    border-radius: 10px;
-    padding: 1em 5% 1em 1em;
-    box-sizing: border-box;
-    background-color: white;
+  width: 40%;
+  box-shadow: 2px 2px 4px #000;
+  padding: 1em 5% 1em 1em;
+  box-sizing: border-box;
+  background-image: url(../assets/background\ sidebar.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .classchoice {
-    text-decoration: underline;
+  text-decoration: underline;
+  position: sticky;
+  top: 80px;
+  left: 0;
+}
+.cohortclasses {
+  position: sticky;
+  top: 170px;
+  left: 0;
 }

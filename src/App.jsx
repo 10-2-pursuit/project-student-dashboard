@@ -4,6 +4,7 @@ import StudentList from "./components/StudentList";
 import CohortSideBar from "./components/CohortSideBar";
 
 function App() {
+
   const [selectedCohort, setSelectedCohort] = useState(null);
   const [notes, setNotes] = useState([]);
 
@@ -17,7 +18,7 @@ function App() {
         <h1 id="heading">Student Dashboard</h1>
       </header>
       <aside className="sideBar">
-        <h1 className="classchoice">Choose a Class by Start Date</h1>
+        <h1 className="classchoice">Pursuit Cohorts</h1>
         <h3 className="allcohorts" onClick={() => setSelectedCohort(null)}>
           All Students
         </h3>

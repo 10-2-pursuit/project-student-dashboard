@@ -14,7 +14,7 @@ const CohortSideBar = ({ setSelectedCohort, students, selectedCohort }) => {
     groupedByCohort[cohortCode].push(student);
   });
   return (
-    <div>
+    <div className="cohortclasses">
       {Object.entries(groupedByCohort).map(([cohortCode, students]) => {
         const match = cohortCode.match(/([a-zA-Z]+)(\d+)/);
         const wordCohort = match[1];

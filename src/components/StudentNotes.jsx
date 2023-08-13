@@ -37,6 +37,7 @@ const StudentNotes = ({ handleNotes, notes, studentId }) => {
           placeholder="Enter commenters name"
           value={commenterName}
           onChange={handleCommenterNameChange}
+          required
         ></input>
         <br />
         <p>Comment</p>
@@ -45,6 +46,7 @@ const StudentNotes = ({ handleNotes, notes, studentId }) => {
           placeholder="Comment"
           value={comment}
           onChange={handleCommentChange}
+          required
         ></input>
         <br />
         <button>Add Note</button>
