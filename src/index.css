@@ -6,8 +6,8 @@ body{
 
 
 .dashboard{
-  display:flex;
- justify-content: center;
+  display:grid;
+grid-template-columns:1fr 1fr;
     padding: 20px;
 }
 
@@ -28,7 +28,7 @@ body{
 .student-list {
      flex: 1;
      padding: 20px;
- border-right: 1px solid #ccc;
+ border-left: 1px solid #ccc;
  box-sizing: border-box;
 }
 

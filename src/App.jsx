@@ -5,10 +5,17 @@ import data from "./data/data.json";
 
 const App = () => {
   const [selectedStudent, setSelectedStudent] = useState(null);
+  const [selectedCohort, setSelectedCohort]= useState(null);
  
   const handleSelectedStudent = (student) => {
     setSelectedStudent(student);
   };
+
+  const handleSelectedCohort = (cohort)=> {
+selectedCohort(cohort);
+  }
+
+
 
   return (
     <div className="dashboard">
