@@ -8,7 +8,7 @@ import "/App.css";
 function App() {
   const [students, setStudents] = useState(studentsData);
   const [cohorts, setCohorts] = useState(["All Students"]);
-  const [tempCohort, setTempCohort] = useState([])
+  const [tempCohort, setTempCohort] = useState([...students])
   const [showMore, setShowMore] = useState(false);
   const [createNotes, setCreateNotes] = useState("");
   const [showNotes, setShowNotes] = useState(false);
@@ -32,8 +32,9 @@ function App() {
         student.cohort.cohortCode === cohort
       )
       setTempCohort([...filteredList])
-    } else {
-      setTempCohort(students)
+    }
+    if (cohort === "All Students"){
+      setTempCohort([...students])
     }
    }
 
@@ -59,8 +60,9 @@ function App() {
         setCohorts={setCohorts}
         students={students}
         filteredCohorts={filteredCohorts}
-      />
+        />
       <StudentList
+        tempCohort={tempCohort}
         students={students}
         toggleShowMore={toggleShowMore}
         showMore={showMore}
