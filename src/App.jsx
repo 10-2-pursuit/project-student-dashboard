@@ -13,15 +13,19 @@ const App = () => {
 
   const handleSelectedCohort = (cohort)=> {
 selectedCohort(cohort);
-  }
+  };
 
-
+const filteredStudents = selectedCohort ? data.filter((student)) => student.cohort.cohortCode === selectedCohort) : data; 
 
   return (
     <div className="dashboard">
       <h1>DashBoard</h1>
       <p className="total-count">Total students: {data.length}</p>{/*Display Total Count of Students */}
-      <StudentList students={data} onSelectStudent={handleSelectedStudent} />
+      <StudentList 
+      students={filteredStudents} 
+      onSelectStudent={handleSelectedStudent} 
+      onSelectCohort={handleSelectedCohort}// pass this function to StudentList
+      />
       {selectedStudent && (
         <div className="student-details">
           <StudentDetails student={selectedStudent}/>
