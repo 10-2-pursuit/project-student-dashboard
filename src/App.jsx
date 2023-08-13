@@ -4,15 +4,16 @@ import StudentList from "./components/studentList";
 import { useState } from "react";
 import "/App.css";
 
-console.log(studentsData);
 
 function App() {
   const [students, setStudents] = useState(studentsData);
   const [cohorts, setCohorts] = useState(["All Students"]);
-  const [showMore, setShowMore] = useState(false)
+  const [tempCohort, setTempCohort] = useState([])
+  const [showMore, setShowMore] = useState(false);
+  const [createNotes, setCreateNotes] = useState("");
+  const [showNotes, setShowNotes] = useState(false);
 
- 
-  students.forEach((cohort) => {
+ students.forEach((cohort) => {
     if (
       !cohorts.find((cohortSeason) => cohortSeason === cohort.cohort.cohortCode)
     ) {
@@ -20,8 +21,34 @@ function App() {
     }
   });
 
-  function toggleShowMore(){
-    setShowMore(!showMore)
+  console.log(tempCohort)
+
+
+
+
+  function filteredCohorts([cohort]) {
+    if(cohort) {
+      const filteredList = students.filter((student) => 
+        student.cohort.cohortCode === cohort
+      )
+      setTempCohort([...filteredList])
+    } else {
+      setTempCohort(students)
+    }
+   }
+
+  cohorts.sort();
+
+  function handleTextChange(e) {
+    
+  }
+
+  function toggleShowNotes() {
+    setShowNotes(!showNotes)
+  }
+
+  function toggleShowMore() {
+    setShowMore(!showMore);
   }
 
   return (
@@ -31,8 +58,19 @@ function App() {
         cohorts={cohorts}
         setCohorts={setCohorts}
         students={students}
+        filteredCohorts={filteredCohorts}
       />
-      <StudentList students={students} toggleShowMore={toggleShowMore} showMore={showMore} setShowMore={setShowMore} />
+      <StudentList
+        students={students}
+        toggleShowMore={toggleShowMore}
+        showMore={showMore}
+        setShowMore={setShowMore}
+        showNotes={showNotes}
+        setShowNotes={setShowNotes}
+        toggleShowNotes={toggleShowNotes}
+        createNotes={createNotes}
+        setCreateNotes={setCreateNotes}
+      />
     </div>
   );
 }

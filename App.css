@@ -1,53 +1,52 @@
 .pageLayout {
-    height: 100vh;
-    width: 100vw;
-    grid-template-areas: "header header header"
-        "cohorts students students";
-    display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-areas:
+    "header header header"
+    "cohorts students students";
+  display: grid;
 }
 
 header {
-    grid-area: header;
-    text-align: center;
-    font-size: x-large;
-    margin: 0px;
-    padding: 25px;
-    background-color: aquamarine;
+  grid-area: header;
+  text-align: center;
+  font-size: x-large;
+  margin: 0px;
+  padding: 25px;
+  background-color: aquamarine;
 }
 
 .studentList {
-    grid-area: students;
-    display: grid;
+  grid-area: students;
+  display: grid;
 }
 
 .cohortList {
-    grid-area: cohorts;
+  grid-area: cohorts;
 }
 
 .cohortList ul {
-    list-style: none;
+  list-style: none;
 }
 
 .cohort {
-    
-    border-bottom: 1px solid teal;
+  border-bottom: 1px solid teal;
 }
 
 .student {
-    display: flex;
-    width: 500px;
-    height: fit-content;
-    border: 1px solid teal;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 3px lightgrey;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-
+  display: flex;
+  width: 500px;
+  height: fit-content;
+  border: 1px solid teal;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px lightgrey;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
 .student img {
-    width: 100px;
+  width: 100px;
 }
