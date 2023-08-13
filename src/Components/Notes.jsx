@@ -21,10 +21,7 @@ const Notes = ({handleFormSubmit, studentId, studentNotes}) => {
 
     const updateComments = (e) => {
         handleFormSubmit(e)
-        console.log(commentAmount)
         setCommentAmount(commentAmount+1)
-        console.log(commentAmount)
-        
     }
 
     return (

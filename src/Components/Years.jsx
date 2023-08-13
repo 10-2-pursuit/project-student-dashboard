@@ -41,9 +41,6 @@ const Years = ({
     yearList.sort(yearSorter)
     yearList = ["All Students" , ...yearList]
 
-    // console.log(yearList)
-    // console.log(studentsData[0].cohort.cohortCode)
-
     return (
         <div className='Years'>
             <h3> Choose a Class by Start Date</h3>

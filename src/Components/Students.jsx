@@ -21,11 +21,6 @@ const Students = ({
     }
     
 
-
-
-    // console.log(filteredStudents.length)
-
-
     return (
         <div className='Students'>
             <h3 className='CohortStats'>{readableYear(selectedCohort)}</h3>

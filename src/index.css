@@ -14,7 +14,7 @@
     grid-template-columns: 33vw 67vw ;
     grid-template-rows: 20vh 80vh;
     overflow-x: hidden;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 
 .Header {
@@ -28,7 +28,6 @@
     background-color: var(--customGreen);
     display: flex;
     flex-direction: column;
-    /* margin-top: ; */
     max-height: 20vh;
 }
 
@@ -38,13 +37,17 @@
     grid-row: 2 / span 1;
     grid-column: 1 / span 1;
     background-color: aliceblue;
-    height: 80%;
+    min-height: 630px;
+    max-height: 80%;
     font-family: sans-serif;
     padding-left: 20px;
     padding: 20px;
-    width: 300px;
+    /* width: 300px; */
     border-radius: 0px 0px 20px 0px;
     box-shadow: 0px 10px 10px gray;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* position: fixed; */
 }
 
 .Years h3 {
@@ -69,13 +72,11 @@
     padding: 20px;
     grid-row: 2 / span 1;
     grid-column: 2 / span 3;
-    /* background-color: lightgray; */
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .CohortStats {
     transition: 250ms;
-    /* text-align: left; */
     color: black;
     margin-left: 0%;
     
@@ -97,7 +98,6 @@
     border: 2px solid var(--customGreen);
     padding: 10px;
     margin: 10px;
-    /* color: black; */
     display: grid;
     grid-template-rows: 120px 20px;
     grid-template-columns: 20% 40% 40%;
@@ -122,12 +122,10 @@
 }
 
 .StudentInfo {
-    /* grid-column: 2; */
     display: flex;
     padding-left: 10px;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
 }
 
 .StudentInfo h3 {
@@ -135,7 +133,7 @@
 }
 
 .ShowMore{
-    padding-left: 10px;
+padding-left: 10px;
    text-decoration: underline;
    grid-row: 2;
    grid-column: 2;
@@ -148,8 +146,6 @@
     grid-column: 3;
     justify-content: right;
     align-items: top;
-    
-    /* text-align: center; */
 }
 
  .StudentDetails {
@@ -170,8 +166,9 @@
 
 fieldset {
     padding: 20px;
-    /* margin: 10px */
+    display: grid;
 }
+
 label {
     margin-right: 10px
 }
@@ -185,7 +182,6 @@ input[type="submit"] {
     background-color: var(--customGreen);
 
 }
-
 
 /* Dark Mode */
 
@@ -256,4 +252,16 @@ input[type="submit"] {
 .DarkMode .Student {
     transition: 250ms;
     border-color: var(--darkModeHighlight);
+}
+
+.DarkMode fieldset input[type="text"]{
+
+    background-color: lightgray;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}
+
+label {
+    padding: 5px;
 }

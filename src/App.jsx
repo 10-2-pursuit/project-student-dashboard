@@ -19,7 +19,6 @@ function App() {
   }
 
   const handleUpdateCohort = (newCohort) => {
-    // console.log(newCohort)
     setCohort(newCohort)
   }
 
@@ -29,7 +28,6 @@ function App() {
     let thisStudentNotes = {}
 
     if(studentNotes[e.target.studentId.value]){
-      // console.log("yeah")
       thisStudentNotes = { 
         ...studentNotes,
         [e.target.studentId.value]: 
@@ -40,7 +38,6 @@ function App() {
           
       }
     }  else {
-      // console.log("nah")
       thisStudentNotes = {
         ...studentNotes,
         [e.target.studentId.value]: 
@@ -51,12 +48,10 @@ function App() {
       }
     }
 
-    // console.log(thisStudentNotes)
     handleUpdateStudentNotes(thisStudentNotes)
   }
 
   const readableYear = (name) => {
-    // console.log(name)
     let isYear = name.search(/[0-9]/) == -1
     let season = name.slice(0, (name.length-4))
     let year = name.slice((name.length-4), name.length)
