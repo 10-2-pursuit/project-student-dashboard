@@ -3,7 +3,7 @@ import OneOnOneSection from "./OneOnOneSection";
 
 const StudentList = ({ students, handleAddNote }) => {
   const [expandedDetails, setExpandedDetails] = useState({});
-  const [selectedClass, setSelectedClass] = useState("All Students");
+  const [selectedClass, setSelectedClass] = useState("All Students"); 
   const [totalStudents, setTotalStudents] = useState(students.length);
 
   const isOnTrack = (student) =>
@@ -20,10 +20,12 @@ const StudentList = ({ students, handleAddNote }) => {
     }));
   };
 
+
+
   return (
     <div className="student-list">
-      <h1>{selectedClass} </h1>
-      <h3>Total Students: {totalStudents}</h3>
+           <h1 >{selectedClass} </h1> 
+      <h3>Total Students: {totalStudents}</h3> 
       {students.map((student) => (
         <div
           className={`student-card ${

@@ -10,7 +10,7 @@ const SeasonClass = ({ students, setFilteredStudents }) => {
 
   return (
     <div className="bar">
-      <h1>Choose a Class By Season</h1>
+      <h1>Choose a Class By Start Date</h1>
 
       <h2 onClick={() => handleFilterChange("Spring2025")}>Spring 2025</h2>
       <h2 onClick={() => handleFilterChange("Spring2026")}>Spring 2026</h2>
