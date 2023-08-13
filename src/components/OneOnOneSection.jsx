@@ -40,3 +40,6 @@ const OneOnOneSection = ({ notes, addNote }) => {
 };
 
 export default OneOnOneSection;
+
+
+

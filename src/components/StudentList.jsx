@@ -9,7 +9,7 @@ const StudentList = ({ students, handleAddNote }) => {
     student.certifications.linkedin &&
     student.certifications.github &&
     student.certifications.mockInterview &&
-    student.codeWarsScore > 600;
+    student.cohort.scores > 600;
 
   const toggleDetails = (studentId) => {
     setExpandedDetails((prevState) => ({
@@ -37,8 +37,13 @@ const StudentList = ({ students, handleAddNote }) => {
               {student.names.preferredName} {student.names.surname}
             </h3>
             <p className="student-info1">Username: {student.username}</p>
-            <p className="student-info2">Class Season: {student.cohort.cohortCode}</p>
+            <p className="student-info2">
+              Class Season: {student.cohort.cohortCode}
+            </p>
             <p className="student-info3">Birthday: {student.dob}</p>
+            <p className="student-status">
+              Status: {isOnTrack(student) ? "On Track" : "Off Track"}
+            </p>
           </div>
 
           <button
@@ -48,14 +53,42 @@ const StudentList = ({ students, handleAddNote }) => {
             {expandedDetails[student.id] ? "Hide Details" : "Show More"}
           </button>
           {expandedDetails[student.id] && (
-            <div className="student-details">
-              <OneOnOneSection
-                notes={student.notes}
-                addNote={(name, comment) =>
-                  handleAddNote(student.id, name, comment)
-                }
-              />
-            </div>
+            <>
+              <div className="additional-details">
+                <div className="codewars">
+                  <h3>CodeWars</h3>
+                  <p>Current Total: {student.codewars.current.total}</p>
+                  <p>Last Week : {student.codewars.current.lastWeek}</p>
+                  <p>Goal: {student.codewars.goal.total}</p>
+                </div>
+                <div className="score">
+                  <h3>Scores</h3>
+                  <p>Assigments: {student.cohort.scores.assignments}%</p>
+                  <p>Projects: {student.cohort.scores.projects}%</p>
+                  <p>Assesments: {student.cohort.scores.assignments}%</p>
+                </div>
+                <div className="certification">
+                  <h3>Certifications</h3>
+                  <p>Resume: {student.certifications.resume ? "✅" : "❌"}</p>
+                  <p>
+                    LikedIn: {student.certifications.linkedin ? "✅" : "❌"}
+                  </p>
+                  <p>
+                    Mock Interview:{" "}
+                    {student.certifications.mockInterview ? "✅" : "❌"}
+                  </p>
+                  <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
+                </div>
+              </div>
+              <div className="student-details">
+                <OneOnOneSection
+                  notes={student.notes}
+                  addNote={(name, comment) =>
+                    handleAddNote(student.id, name, comment)
+                  }
+                />
+              </div>
+            </>
           )}
         </div>
       ))}
