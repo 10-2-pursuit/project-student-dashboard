@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  display: grid;
+  height:100vh;
+  grid-template-areas: "sidebar main" ;
+
+}
+
+.total-count {
+  font-size: 18px;
+  color: #10c9da;
+}
+
+.container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "box1 box2 box2" "box1 box2 box2" "box3 box3 box3";
+  gap:20px ;
+  padding:20px ;
+}
+
+.box2 {
+  grid-area: box2;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  overflow: auto;
+}
+
+.box3 {
+  grid-area: box3;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  overflow: auto;
+}
+
+
+.student-list, 
+.cohort-list {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* box-sizing: border-box; */
+  overflow: auto;
+}
+
+.student-list{
+  flex: 1;
+}
+
+
+.student img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.student {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.student-details {
+  flex: 1;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.student-details-container {
+  flex: 1;
+  padding: 20px;
+  /* box-sizing: border-box; */
+}
+
+
+.cohort-list ul {
+  list-style: none;
+  padding: 0;
+  padding: 0;
+}
+
+.cohort-list {
+  flex: 0.4; 
+  margin-right: 20px; 
+}
+
+.cohort-item {
+  cursor: pointer;
+  padding: 5px;
+  transition: background-color 0.3s;
+}
+
+.cohort-item:hover {
+  background-color: #f0f0f0;
+}
+
+.selected {
+  background-color: #10c9da;
+  color: white;
+}
+
+.additional-info p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.additional-info {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  margin-top: 20px;
+}
+
+.toggle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3;
+}
+
+.one-on-one-note input .one-on-one-note textarea {
+  padding: 3px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.one-on-one-note button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
