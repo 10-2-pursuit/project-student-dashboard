@@ -1,3 +1,21 @@
+# The Student Dashboard
+##### The Student Dashboard Project
+
+This website serves as a proof of concept to keep track of student progress as well as educator notes on each individual student. This website keeps track on a series of requirements for each individual student that you can see and then add notes on as a commentor. Afterwards, one can see the amount of comments made on each individual student.
+
+Students can be sorted by Seasonal Start date or viewing all at once. 
+
+A Day/Night bode can be toggled between for night time viewing.
+
+## How to use
+
+## Stretch Goals
+
+- Implemented a button to toggle between night and dark mode.
+- Implememented a count for the number of notes added to each student (individually).
+
+
+
 # Student Dashboard Project
 
 For this assignment, you will build a student dashboard that will make use of already existing data stored in a JSON file. Users will be able to view students in several ways as well as add comments to those students.

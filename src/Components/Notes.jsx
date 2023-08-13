@@ -40,7 +40,7 @@ const Notes = ({handleFormSubmit, studentId, studentNotes}) => {
                         <input 
                             value={newComment.commenterName} 
                             onChange={handleChange}
-                            type="text" name="commenterName" id="commenterName" /><br />
+                            type="text" name="commenterName" id="commenterName" required/><br />
                     <label htmlFor="comment"> Commenter </label>
                         <input 
                             value={newComment.comment} 

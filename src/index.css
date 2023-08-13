@@ -103,6 +103,11 @@
     grid-template-columns: 20% 40% 40%;
 }
 
+
+.StudentInfo span {
+    padding-top: 5px;
+}
+
 .Student img{
     grid-column: 1;
     transition: 250ms;
@@ -148,6 +153,7 @@
 }
 
  .StudentDetails {
+    transition: 250ms;
     grid-column: 1/ span 3;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -220,7 +226,11 @@ input[type="submit"] {
 .DarkMode .Years {
     transition: 250ms;
     background-color: var(--darkModeYears);
-    color: white;
+    color: white;   
+}
+
+.DarkMode .Year {
+    border-color: var(--darkModeHighlight);
 }
 
 .DarkMode .Year:hover {
@@ -243,4 +253,7 @@ input[type="submit"] {
     filter: grayscale(20%);
 }
 
-.DarkMode
+.DarkMode .Student {
+    transition: 250ms;
+    border-color: var(--darkModeHighlight);
+}
