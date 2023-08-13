@@ -1,3 +1,8 @@
+import React from 'react';
+import header from './src/components/header'
+import sidebar from '.src/components/sidebar';
+import dashboard from '.src/components/dashboard';
+
 
 function App() {
   return (
