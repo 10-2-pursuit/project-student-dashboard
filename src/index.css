@@ -1,0 +1,256 @@
+body,
+h1,
+h2,
+h3,
+p,
+button,
+input,
+textarea {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: Arial, sans-serif;
+}
+
+.body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    display: grid;
+    grid-template-areas: "arg list"
+        "arg list";
+}
+
+.head {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+.student-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+}
+
+.student-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.additional-info {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.additional-info:hover {
+    background-color: #0056b3;
+}
+
+.student-details {
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+}
+
+.student-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summit {
+    display: inline-block;
+    background-color: rgb(255, 7, 7);
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.summit:hover {
+    background-color: #de35139b;
+}
+
+
+.add-note-btn:hover {
+    background-color: #0056b3;
+}
+
+.one-on-one-section {
+    margin-top: 20px;
+
+}
+
+.notes-list {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.note {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.title {
+    background-color: #007bff8b;
+    text-align: center;
+
+}
+
+h2 {
+    text-align: center;
+    cursor: pointer;
+    background-color: aqua;
+    padding: 5px;
+    border-bottom: #f2f2f2;
+}
+
+
+.codewars {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+}
+
+.codewars h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.codewars p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+.score {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+}
+
+.score h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.score p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+.certification {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+}
+
+.certification h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.certification p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.student-details {
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.student-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.student-details input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.student-details input:focus {
+    border-color: #007bff;
+}
+
+.bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bar h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.bar h2 {
+    margin: 8px 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.bar h2:hover {
+    background-color: #0056b3;
+}
