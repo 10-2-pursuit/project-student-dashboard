@@ -68,12 +68,12 @@ export default function StudentList({ students, selectedCohort }) {
           <li key={student.id}>
             <img src={student.profilePhoto} alt={student.names.surname} />
             <p>
-              <p className="name-track">
-                {isOnTrack(student) && student.codewars.current.total ? (
+                {isOnTrack(student) && student.codewars.current.total > 600 ? (
                   <span className="on-track">On Track</span>
                 ) : (
                   <span className="off-track">Off Track</span>
                 )}
+              <p className="name-track">
                 {student.names.preferredName}{" "}
                 {student.names.middleName.charAt(0)}. {student.names.surname}
               </p>

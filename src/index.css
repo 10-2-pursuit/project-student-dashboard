@@ -25,12 +25,32 @@ header {
     color: white;
 }
 
+.container button {
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.notes button {
+    margin-left: 0;
+    margin-top: 10px;
+}
+
 .content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 30px;
     padding-bottom: 3rem;
+}
+
+.filter h2 {
+    margin-left: 40px;
+}
+
+.filter hr {
+    margin-right: 50%;
+    border: 2px solid rgb(198, 21, 198);
+    border-radius: 5px;
 }
 
 .filter, .student-list, ul {
@@ -61,7 +81,7 @@ img {
     float: left;
     width: 100px;
     padding-right: 5px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .student-list li {
@@ -71,6 +91,17 @@ img {
     margin-left: -50px;
     padding-left: 10px;
     padding-right: 5px;
+}
+
+.name-track {
+    margin-top: -18px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.show {
+    color: rgb(198, 21, 198);
+    text-decoration: underline;
 }
 
 .notes li{
