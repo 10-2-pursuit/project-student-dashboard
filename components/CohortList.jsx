@@ -1,17 +1,15 @@
 import React from "react";
 
-const CohortList = ({data}) => {
-    cohorts = data.cohort.cohortCode
-    // sortedCohorts = cohorts.sort()
-    console.log(sortedCohorts)
-    // const filteredCohort = cohortGroups.filter((cohortGroup) =>  )
+const CohortList = ({ title, studentsList, setShowStudents }) => {
+  const handleCohortSelection = () => {
+    setShowStudents(studentsList);
+  };
 
-    return (
-        <div>
-            {/* <h2 className="message">Choose a Class by Start Date</h2> */}
-                <li>{cohortGroups}</li>
-        </div>
-      )
-    }
+  return (
+    <div className="cohort" onClick={handleCohortSelection}>
+      <ul>{title}</ul>
+    </div>
+  );
+};
 
-  export default CohortList
+export default CohortList;

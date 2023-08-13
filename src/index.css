@@ -1,37 +1,44 @@
-.container {
+@media (min-width: 800px) {
+  body {
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .container {
     height: 100vh;
     width: 100vw;
     display: grid;
-        grid-template-columns: 1fr, 2fr;
-        grid-template-rows: minmax(100px, auto);
-        column-gap: 120px;
-        grid-area: "cohort students"
-                    "cohort students";
-
-}
-.header {
-
-grid-area: header;
-}
-.cohort {
-grid-area: cohort;
-padding-left: 10px;
-}
-
-.students {
-grid-area: students;
-}
-header {
-        background: mediumorchid;
-        color: white;
-        font-size: xx-large;
-        font-family: 'Courier New', Courier, monospace;
-        justify-content: center;
-        width: 100%;
-        text-align: center;
-        padding: 50px ;
+    grid-template-columns: 1fr, 3fr;
+    grid-template-rows: minmax(100px, auto);
+    column-gap: 120px;
+    grid-area: "cohort students" "cohort students";
   }
-.student-card {
+  .header {
+    display: flex;
+    justify-content: center;
+    grid-area: header;
+  }
+  .cohort {
+    grid-column: 1;
+    grid-area: cohort;
+    padding-left: 10px;
+  }
+
+  .students {
+    grid-column: 2;
+    grid-area: students;
+    padding: 10px;
+  }
+  header {
+    background: mediumorchid;
+    color: white;
+    font-size: xx-large;
+
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+  }
+  .student-card {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,21 +48,111 @@ header {
     margin: 5px;
     gap: 20px;
     align-items: flex-start;
-}
+    padding: 15px;
+  }
 
-.image {
-     flex-basis: fit-content;
+  .image {
+    flex-basis: fit-content;
     /* padding-inline-start: 10px; */
     image-rendering: optimizeQuality;
-}
-.profile-img {
+  }
+  .profile-img {
     width: 150px;
     padding-left: 0%;
     padding-top: 10px;
     padding-bottom: 5px;
     justify-items: left;
-    
+  }
+  .message {
+    padding-left: 10px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  form input,
+  form label {
+    box-sizing: border-box;
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+  }
+  .graduation-track {
+    font-weight: bold;
+  }
 }
-.message {
+
+@media (max-width: 799px) and (min-width: 400px) {
+  body {
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: minmax(100px, auto); */
+    column-gap: 120px;
     text-align: center;
+  }
+  .cohort {
+    grid-column: 1;
+    direction: ltr;
+  }
+  .students {
+    grid-row: 2;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+    grid-area: header;
+  }
+
+  header {
+    background: mediumorchid;
+    color: white;
+    font-size: xx-large;
+
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+  }
+  .student-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    width: 95%;
+    height: fit-content;
+    margin: 5px;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .image {
+    flex-basis: fit-content;
+    /* padding-inline-start: 10px; */
+    image-rendering: optimizeQuality;
+  }
+  .profile-img {
+    width: 150px;
+    padding-left: 0%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    justify-items: left;
+  }
+  .message {
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    text-align: center;
+  }
+  form label {
+    box-sizing: border-box;
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+  }
 }
