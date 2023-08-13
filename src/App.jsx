@@ -2,7 +2,7 @@ import studentsData from "./data/data.json";
 import CohortList from "./components/CohortList";
 import StudentList from "./components/StudentList";
 import { useState } from "react";
-import "/App.css";
+import "../App.css";
 
 function App() {
   const [students, setStudents] = useState(studentsData);
