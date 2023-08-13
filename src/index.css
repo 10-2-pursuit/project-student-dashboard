@@ -1,0 +1,282 @@
+/* Custom Colors */
+:root {
+    --customGreen: rgb(160, 188, 105);
+    --customGreenShadow: rgb(135, 154, 96);
+    --darkModeHeader: rgb(66, 66, 107);
+    --darkModeYears: rgb(106, 113, 148);
+    --darkModeHighlight: rgb(55, 39, 120);
+
+}
+
+.TopLevel {
+    transition: 250ms;
+    display: grid;
+    grid-template-columns: 33vw 67vw ;
+    grid-template-rows: 20vh 80vh;
+    overflow-x: hidden;
+    /* overflow-y: auto; */
+}
+
+.Header {
+    transition: 250ms;;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 1;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: var(--customGreen);
+    display: flex;
+    flex-direction: column;
+    max-height: 20vh;
+}
+
+/* CSS for Years and sub-components/elements */
+
+.Years {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    background-color: aliceblue;
+    min-height: 630px;
+    max-height: 80%;
+    font-family: sans-serif;
+    padding-left: 20px;
+    padding: 20px;
+    /* width: 300px; */
+    border-radius: 0px 0px 20px 0px;
+    box-shadow: 0px 10px 10px gray;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* position: fixed; */
+}
+
+.Years h3 {
+    text-align: center;
+}
+
+.Year {
+    border-bottom: 1px solid var(--customGreen);
+    display: flex;
+    align-items: center;
+}
+
+.Year:hover {
+    transition: 250ms;
+    background-color: lightgray;
+    padding-left: 10px;
+}
+
+
+/* CSS for Students and sub-components/elements */
+.Students {
+    padding: 20px;
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.CohortStats {
+    transition: 250ms;
+    color: black;
+    margin-left: 0%;
+    
+}
+
+.Students h3 {
+    margin-bottom: 0px;
+}
+
+.Students h4 {
+    margin-top: 5px;
+}
+
+.SpanGreen {
+    color: green
+}
+
+.SpanRed {
+    color:red
+}
+
+.Student {
+    border: 2px solid var(--customGreen);
+    padding: 10px;
+    margin: 10px;
+    display: grid;
+    grid-template-rows: 120px 20px;
+    grid-template-columns: 20% 40% 40%;
+}
+
+
+.StudentInfo span {
+    padding-top: 5px;
+}
+
+.Student img{
+    grid-column: 1;
+    transition: 250ms;
+    width: 100px;
+    padding: 10px;
+    border-radius: 15px;
+ }
+
+.Student img:hover {
+    transition: 250ms;
+    border-radius: 100px;
+}
+
+.StudentInfo {
+    display: flex;
+    padding-left: 10px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.StudentInfo h3 {
+    margin: 0px;
+}
+
+.ShowMore{
+padding-left: 10px;
+   text-decoration: underline;
+   grid-row: 2;
+   grid-column: 2;
+   width: fit-content;
+}
+
+.onTrack {
+    display: flex;
+    grid-row: 1;
+    grid-column: 3;
+    justify-content: right;
+    align-items: top;
+}
+
+ .StudentDetails {
+    transition: 250ms;
+    grid-column: 1/ span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+ }
+
+
+
+ /* CSS for notes and related subelements */
+.Notes {
+    border-top: 2px solid var(--customGreen);
+    grid-column: 1 / span 3;
+    padding: 10px
+}
+
+fieldset {
+    padding: 20px;
+    display: grid;
+}
+
+label {
+    margin-right: 10px
+}
+
+input[type="submit"] {
+    border: none;
+    margin: 5px;
+    padding: 5px 20px 5px 20px;
+    color: aliceblue;
+    border-radius: 10px;
+    background-color: var(--customGreen);
+
+}
+
+/* Dark Mode */
+
+.DarkMode {
+    transition: 250ms; 
+    background-color: gray;
+
+}
+
+.DarkMode .Header {
+    background-color: var(--darkModeHeader);
+}
+
+.DayNight {
+    background-color: var(--darkModeYears);
+    transition: 250ms;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 30px 5px 30px;
+    margin: 5px;
+    box-shadow: 5px 5px 5px var(--customGreenShadow);
+}
+
+.DarkMode .DayNight {
+    background-color: var(--customGreen);
+}
+
+.DayNight:hover {
+    transition: 250ms;
+    background-color: auto;
+}
+
+.DayNight:active {
+    transition: 100ms;
+    background-color: bisque;
+}
+
+.DarkMode .Years {
+    transition: 250ms;
+    background-color: var(--darkModeYears);
+    color: white;   
+}
+
+.DarkMode .Year {
+    border-color: var(--darkModeHighlight);
+}
+
+.DarkMode .Year:hover {
+    padding-left: 10px;
+    background-color: white;
+    color: black;
+}
+
+.DarkMode .CohortStats{
+    transition: 250ms;
+    color: white;
+    font-size: 15pt;
+}
+
+.DarkMode .SpanGreen {
+    color: var(--darkModeHighlight);
+}
+.DarkMode .SpanRed {
+    color: rgb(113, 47, 47);
+}
+
+
+.DarkMode .onTrack {
+    transition: 250ms;
+    font-size: 13pt;
+    /* font-weight: 600; */
+}
+
+.DarkMode img{
+    filter: grayscale(20%);
+}
+
+.DarkMode .Student {
+    transition: 250ms;
+    border-color: var(--darkModeHighlight);
+}
+
+
+.DarkMode fieldset input[type="text"]{
+
+    background-color: lightgray;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}
+
+label {
+    padding: 5px;
+}
