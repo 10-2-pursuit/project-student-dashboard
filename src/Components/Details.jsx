@@ -1,11 +1,13 @@
 import { useState } from "react";
 export default function Details({ student }) {
-
-  const [newNote, setNewNote] = useState({commenter: "", comment: ""});
-  const commentTotal = student.notes.length
+  const [newNote, setNewNote] = useState({ commenter: "", comment: "" });
+  const commentTotal = student.notes.length;
 
   function handleAddNote() {
-    const createNote = {commenter: newNote.commenter, comment: newNote.comment};
+    const createNote = {
+      commenter: newNote.commenter,
+      comment: newNote.comment,
+    };
     const updatedNotes = [...student.notes, createNote];
     setNewNote({ commenter: "", comment: "" });
     student.notes = updatedNotes;
@@ -53,17 +55,31 @@ export default function Details({ student }) {
         <h3>1-On-1 Notes</h3>
         <form onSubmit={handleSubmit}>
           <label htmlFor="commenter">Commentor Name: </label>
-          <input type="text" id="commenter" onChange={handleTextChange} value={newNote.commenter} /> <br />
-
+          <input
+            type="text"
+            id="commenter"
+            onChange={handleTextChange}
+            value={newNote.commenter}
+          />{" "}
+          <br />
           <label htmlFor="comment">Comment: </label>
-          <input type="text" id="comment" onChange={handleTextChange} value={newNote.comment} required/>
+          <input
+            type="text"
+            id="comment"
+            onChange={handleTextChange}
+            value={newNote.comment}
+            required
+          />
           <br />
           <button type="submit">Add Note</button>
         </form>
         <p>Comments: {commentTotal}</p>
         <ul>
           {student.notes.map((person, index) => (
-            <li key={index}>{person.commenter ? person.commenter : "Anonymous"} says, "{person.comment}"</li>
+            <li key={index}>
+              {person.commenter ? person.commenter : "Anonymous"} says, "
+              {person.comment}"
+            </li>
           ))}
         </ul>
       </div>

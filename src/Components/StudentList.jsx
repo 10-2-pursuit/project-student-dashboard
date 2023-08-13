@@ -68,11 +68,11 @@ export default function StudentList({ students, selectedCohort }) {
           <li key={student.id}>
             <img src={student.profilePhoto} alt={student.names.surname} />
             <p>
-                {isOnTrack(student) && student.codewars.current.total > 600 ? (
-                  <span className="on-track">On Track</span>
-                ) : (
-                  <span className="off-track">Off Track</span>
-                )}
+              {isOnTrack(student) && student.codewars.current.total > 600 ? (
+                <span className="on-track">On Track</span>
+              ) : (
+                <span className="off-track">Off Track</span>
+              )}
               <p className="name-track">
                 {student.names.preferredName}{" "}
                 {student.names.middleName.charAt(0)}. {student.names.surname}
@@ -80,7 +80,10 @@ export default function StudentList({ students, selectedCohort }) {
               {student.username} <br />
               <p>Birthday: {formatDate(student.dob)}</p>
               <br />
-              <span className="show" onClick={() => toggleStudentDetails(student.id)}>
+              <span
+                className="show"
+                onClick={() => toggleStudentDetails(student.id)}
+              >
                 {studentDetails === student.id
                   ? "Show Less..."
                   : "Show More..."}

@@ -1,21 +1,40 @@
+export default function CohortFilter({
+  cohorts,
+  onSelect,
+  onShowAll,
+  setSelectedCohort,
+  selectedCohort,
+}) {
+  const handleCohortClick = (cohort) => {
+    setSelectedCohort(cohort);
+    onSelect(cohort);
+  };
 
-export default function CohortFilter({cohorts, onSelect, onShowAll, setSelectedCohort, selectedCohort}) {
+  return (
+    <div className="filter">
+      <h2>Choose a Class by Start Date</h2>
+      <ul>
+        <li
+          onClick={() => {
+            onShowAll();
+            setSelectedCohort(null);
+          }}
+          className={selectedCohort === null ? "selected" : ""}
+        >
+          All Students <hr />
+        </li>
 
-    const handleCohortClick = (cohort) => {
-        setSelectedCohort(cohort);
-        onSelect(cohort);
-    }
-
-    return (
-        <div className="filter">
-            <h2>Choose a Class by Start Date</h2>
-            <ul>
-                <li onClick={() => {onShowAll(); setSelectedCohort(null); }} className={selectedCohort === null ? "selected" : ""}>All Students <hr /></li>
-
-                {cohorts.map(cohort => (
-                    <li key={cohort} onClick={() => handleCohortClick(cohort)} className={selectedCohort === null ? "selected" : ""} > {cohort.replace(/(.*?)([0-9]+)/, "$1 $2")} <hr /> </li>
-                ))}
-            </ul>
-        </div>
-    )
+        {cohorts.map((cohort) => (
+          <li
+            key={cohort}
+            onClick={() => handleCohortClick(cohort)}
+            className={selectedCohort === null ? "selected" : ""}
+          >
+            {" "}
+            {cohort.replace(/(.*?)([0-9]+)/, "$1 $2")} <hr />{" "}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
