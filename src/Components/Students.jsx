@@ -11,10 +11,25 @@ const Students = ({
     // console.log(selectedCohort)
     // console.log(studentsData)
     
+    let filteredStudents = []
+
+    if(selectedCohort != "All Students"){
+        filteredStudents = [...studentsData].filter(
+                (student) => student.cohort.cohortCode == selectedCohort)
+    } else {
+        filteredStudents = [...studentsData]
+    }
+    
+
+
+
+    console.log(filteredStudents.length)
+
+
     return (
         <div className='Students'>
             <h3>{readableYear(selectedCohort)}</h3>
-            <h4>Total Students: <span className='SpanGreen'>{studentsData.length}</span></h4>
+            <h4>Total Students: <span className='SpanGreen'>{filteredStudents.length}</span></h4>
 
             {studentsData.map((student) => { 
                 return selectedCohort == "All Students" 
