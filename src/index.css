@@ -72,6 +72,34 @@ textarea {
     background-color: #f9f9f9;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+}
+
+.student-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summit {
+    display: inline-block;
+    background-color: rgb(255, 7, 7);
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.summit:hover {
+    background-color: #de35139b;
+}
+
+
+.add-note-btn:hover {
+    background-color: #0056b3;
 }
 
 .one-on-one-section {
@@ -164,3 +192,35 @@ h2 {
     margin: 5px 0;
   }
   
+  .student-details {
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+.student-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.student-details input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.student-details input:focus {
+    border-color: #007bff;
+}

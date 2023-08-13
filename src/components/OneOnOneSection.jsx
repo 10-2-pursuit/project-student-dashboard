@@ -22,18 +22,20 @@ const OneOnOneSection = ({ notes, addNote }) => {
         ))}
       </div>
       <form onSubmit={handleSubmit}>
+      <textarea
+          placeholder="Add your note here..."
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        />
         <input
+        
           type="text"
           placeholder="Your Name"
           value={commenterName}
           onChange={(e) => setCommenterName(e.target.value)}
         />
-        <textarea
-          placeholder="Add your note here..."
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
-        <button type="submit">Add Note</button>
+       
+        <button className="summit" type="submit">Add Note</button>
       </form>
     </div>
   );
