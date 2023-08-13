@@ -23,7 +23,7 @@ const Students = ({
 
 
 
-    console.log(filteredStudents.length)
+    // console.log(filteredStudents.length)
 
 
     return (

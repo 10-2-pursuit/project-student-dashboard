@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
+
 
 const Notes = ({handleFormSubmit, studentId, studentNotes}) => {
     // console.log(studentNotes)
@@ -9,8 +10,8 @@ const Notes = ({handleFormSubmit, studentId, studentNotes}) => {
         commenterName: "",
         comment: ""
     })
+    const [commentAmount, setCommentAmount] = useState(studentNotes[studentId] ? studentNotes[studentId].length : 0)
 
-    // console.log(studentNotes[studentId])
     
     const handleChange = (e) => {
         setNewComment({...newComment, 
@@ -18,12 +19,19 @@ const Notes = ({handleFormSubmit, studentId, studentNotes}) => {
         })
     }
 
-    console.log(studentNotes[studentId])
+    const updateComments = (e) => {
+        handleFormSubmit(e)
+        console.log(commentAmount)
+        setCommentAmount(commentAmount+1)
+        console.log(commentAmount)
+        
+    }
 
     return (
         <div className="Notes">
             <h3> 1-on-1 Notes</h3>
-            <form onSubmit={handleFormSubmit}>
+            <h4>Number of Comments: {commentAmount}</h4>
+            <form onSubmit={updateComments}>
               <fieldset>
                     <input
                         value={studentId} 

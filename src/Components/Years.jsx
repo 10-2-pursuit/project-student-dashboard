@@ -8,10 +8,10 @@ const Years = ({
     readableYear
 }) => {
 
-    let yearList = [ "All Students" , ...Array.from(new Set(studentsData.map((student) => 
+    let yearList = [ ...Array.from(new Set(studentsData.map((student) => 
     student.cohort.cohortCode)))]
 
-        
+    // Properly sort the years chronologically
     function yearSorter(a,b) {
         const seasonRank = {
             'Winter': 0,
@@ -30,17 +30,16 @@ const Years = ({
             return 1
         }
         if(seasonRank[a[0]] < seasonRank[b[0]]){
-            console.log("nah")
             return -1
         }
         if(seasonRank[a[0]] > seasonRank[b[0]]){
-            console.log("yeah")
             return 1
         }
         return 0
     }
 
     yearList.sort(yearSorter)
+    yearList = ["All Students" , ...yearList]
 
     // console.log(yearList)
     // console.log(studentsData[0].cohort.cohortCode)

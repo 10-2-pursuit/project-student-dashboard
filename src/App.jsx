@@ -28,7 +28,7 @@ function App() {
     let thisStudentNotes = {}
 
     if(studentNotes[e.target.studentId.value]){
-      console.log("yeah")
+      // console.log("yeah")
       thisStudentNotes = { 
         ...studentNotes,
         [e.target.studentId.value]: 
@@ -39,7 +39,7 @@ function App() {
           
       }
     }  else {
-      console.log("nah")
+      // console.log("nah")
       thisStudentNotes = {
         ...studentNotes,
         [e.target.studentId.value]: 
