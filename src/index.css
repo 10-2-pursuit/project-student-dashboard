@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    color: white;
+    background-color: rgb(44, 147, 7);
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.container button {
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.notes button {
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    padding-bottom: 3rem;
+}
+
+.filter h2 {
+    margin-left: 40px;
+}
+
+.filter hr {
+    margin-right: 50%;
+    border: 2px solid rgb(198, 21, 198);
+    border-radius: 5px;
+}
+
+.filter, .student-list, ul {
+    list-style-type: none;
+}
+
+.filter, span {
+    cursor: pointer;
+}
+
+.on-track, .off-track {
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+}
+
+.on-track{
+    font-weight: bold;
+    color: green;
+}
+
+.off-track{
+    font-weight: bold;
+    color: red;
+}
+
+img {
+    float: left;
+    width: 100px;
+    padding-right: 5px;
+    padding-top: 10px;
+}
+
+.student-list li {
+    border: 2px solid black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: -50px;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.name-track {
+    margin-top: -18px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.show {
+    color: rgb(198, 21, 198);
+    text-decoration: underline;
+}
+
+.notes li{
+    border: none;
+}
+
+.grades {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 2rem;
+    padding-top: 15px;
+    text-align: center;
+    background-color: rgb(44, 147, 7);
+}
