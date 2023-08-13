@@ -35,7 +35,11 @@ const Student = ({student, handleFormSubmit, studentNotes}) => {
                    <span className='SpanGreen onTrack'>
                         On Track to Graduate
                    </span>
-                ): null }
+                ): (
+                    <span className='SpanRed onTrack'>
+                        Off Track
+                    </span>
+                ) }
             <span 
                     className='SpanGreen ShowMore'
                     onClick={handleShowDetails}

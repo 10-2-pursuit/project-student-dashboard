@@ -94,6 +94,10 @@
     color: green
 }
 
+.SpanRed {
+    color:red
+}
+
 .Student {
     border: 2px solid var(--customGreen);
     padding: 10px;
@@ -244,6 +248,16 @@ input[type="submit"] {
 .DarkMode .SpanGreen {
     color: var(--darkModeHighlight);
 }
+.DarkMode .SpanRed {
+    color: rgb(113, 47, 47);
+}
+
+
+.DarkMode .onTrack {
+    transition: 250ms;
+    font-size: 13pt;
+    /* font-weight: 600; */
+}
 
 .DarkMode img{
     filter: grayscale(20%);
@@ -253,6 +267,7 @@ input[type="submit"] {
     transition: 250ms;
     border-color: var(--darkModeHighlight);
 }
+
 
 .DarkMode fieldset input[type="text"]{
 
