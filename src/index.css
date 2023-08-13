@@ -1,72 +1,95 @@
-body{ 
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-
-.dashboard{
-  display:grid;
-grid-template-columns:1fr 1fr;
-    padding: 20px;
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
 }
 
 .total-count {
   font-size: 18px;
   color: #10c9da;
-  
 }
 
-.container{
-    display: flex;
-    justify-content: space-between;
-    width:100%;
-    max-width: 1200px;
-    margin: 0 auto;
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .student-list {
-     flex: 1;
-     padding: 20px;
- border-left: 1px solid #ccc;
- box-sizing: border-box;
+  padding: 20px;
+  /* border-left: 1px solid #ccc; */
+  box-sizing: border-box;
+  overflow: auto;
 }
 
 .student img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .student {
-   border: 1px solid #ccc;
-   padding: 10px;
-   margin: 10px;
-   display: flex;
-   align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
 }
 
- .student-details{
+.student-details {
   flex: 1;
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    padding: 20px;
-    background-color: #f8f8f8;
- }
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
 
- .student-details-container {
-    flex:1;
-    padding: 20px;
-    box-sizing:border-box
- }
+.student-details-container {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.cohort-list {
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+}
 
-  .additional-info p {
-    font-size: 14px;
-    margin: 6px 0;
-  }
+.cohort-list ul {
+  list-style: none;
+  padding: 0;
+}
 
-  .additional-info {
+.cohort-item {
+  cursor: pointer;
+  padding: 5px;
+  transition: background-color 0.3s;
+}
+
+.cohort-item:hover {
+  background-color: #f0f0f0;
+}
+
+.selected {
+  background-color: #10c9da;
+  color: white;
+}
+
+.additional-info p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.additional-info {
   border: 1px solid #ccc;
   padding: 20px;
   background-color: #f8f8f8;
@@ -84,27 +107,27 @@ grid-template-columns:1fr 1fr;
 }
 
 .toggle-button:hover {
-    background-color: #0056b3;
-  }
+  background-color: #0056b3;
+}
 
-  .one-on-one-note input
-  .one-on-one-note textarea { padding: 3px;
-    margin-bottom: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+.one-on-one-note input .one-on-one-note textarea {
+  padding: 3px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-  .one-on-one-note button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+.one-on-one-note button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
- ul{
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
- }
+}

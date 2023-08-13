@@ -11,21 +11,43 @@ const App = () => {
     setSelectedStudent(student);
   };
 
-  const handleSelectedCohort = (cohort)=> {
-selectedCohort(cohort);
-  };
+   const handleSelectedCohort = (cohort) => {
+ setSelectedCohort(cohort);
+   };
 
-const filteredStudents = selectedCohort ? data.filter((student)) => student.cohort.cohortCode === selectedCohort) : data; 
+   const cohortNames = [
+    ...new Set(data.map((student) => student.cohort.cohortCode)),
+  ];
+
+ const filteredStudents = selectedCohort 
+ ? data.filter((student) => student.cohort.cohortCode === selectedCohort) : data; 
 
   return (
     <div className="dashboard">
       <h1>DashBoard</h1>
-      <p className="total-count">Total students: {data.length}</p>{/*Display Total Count of Students */}
+      <p className="total-count">Total students: {filteredStudents.length}</p>{/*Display Total Count of Students */}
+      <div className="container">
       <StudentList 
       students={filteredStudents} 
       onSelectStudent={handleSelectedStudent} 
-      onSelectCohort={handleSelectedCohort}// pass this function to StudentList
-      />
+    />
+      <div className="cohort-list">
+        <h2> Available Corhorts</h2>
+        <ul> 
+          {cohortNames.map((cohort, index) => (
+          <li
+           key={index}
+           className = {`cohort-item ${
+            selectedCohort === cohort ? "selected" : ""
+           }`}
+          onClick={()=> handleSelectedCohort(cohort)}
+          >
+            {cohort}
+          </li> 
+        ))}
+          </ul>
+      </div>  
+      </div>
       {selectedStudent && (
         <div className="student-details">
           <StudentDetails student={selectedStudent}/>
