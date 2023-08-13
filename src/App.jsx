@@ -24,40 +24,45 @@ const App = () => {
 
  const cohortTitle = selectedCohort ? `${selectedCohort}` : `All Cohorts`;
 
-  return (
-    <div className="dashboard">
+ return (
+  <div className="container">
+    <div className="box1">
       <h1>DashBoard</h1>
       <h1>{cohortTitle}</h1>
-      <p className="total-count">Total students: {filteredStudents.length}</p>{/*Display Total Count of Students */}
-      <div className="container">
-      <StudentList 
-      students={filteredStudents} 
-      onSelectStudent={handleSelectedStudent} 
-    />
+      <p className="total-count">Total students: {filteredStudents.length}</p>
+      {/*Display Total Count of Students */}
       <div className="cohort-list">
-        <h2> Available Corhorts</h2>
-        <ul> 
+        <h2>Available Cohorts</h2>
+        <ul>
           {cohortNames.map((cohort, index) => (
-          <li
-           key={index}
-           className = {`cohort-item ${
-            selectedCohort === cohort ? "selected" : ""
-           }`}
-          onClick={()=> handleSelectedCohort(cohort)}
-          >
-            {cohort}
-          </li> 
-        ))}
-          </ul>
-      </div>  
+            <li
+              key={index}
+              className={`cohort-item ${
+                selectedCohort === cohort ? "selected" : ""
+              }`}
+              onClick={() => handleSelectedCohort(cohort)}
+            >
+              {cohort}
+            </li>
+          ))}
+        </ul>
       </div>
+    </div>
+    <div className="box2">
+      <StudentList
+        students={filteredStudents}
+        onSelectStudent={handleSelectedStudent}
+      />
+    </div>
+    <div className="box3">
       {selectedStudent && (
         <div className="student-details">
-          <StudentDetails student={selectedStudent}/>
+          <StudentDetails student={selectedStudent} />
         </div>
       )}
     </div>
-  );
+  </div>
+ );
 };
 
 export default App;
