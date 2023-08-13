@@ -43,5 +43,5 @@ If these all meet the requirements (All certifications, all scores above 70%, & 
 ## Stretch Goals
 
 - Implemented a button to toggle between light and dark mode.
-- Implememented a count for the number of notes added to each student (individually).
+- Implemented a count for the number of notes added to each student (individually).
 
