@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import data from "./data/data.json";
 import StudentList from "./components/StudentList";
@@ -20,7 +18,6 @@ function App() {
   return (
     <div className="body">
       <SeasonClass students={data} setFilteredStudents={setFilteredStudents} />
-
       <StudentList students={filteredStudents} handleAddNote={handleAddNote} />
     </div>
   );
