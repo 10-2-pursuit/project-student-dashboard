@@ -1,13 +1,18 @@
 import { useState } from "react";
 
-export default function StudentListItem({
-  student
-}) {
-    
-const [showMore, setShowMore] = useState(false);
+export default function StudentListItem({ student }) {
+  const [showNotes, setShowNotes] = useState(false);
+  const [showMore, setShowMore] = useState(false);
+  const [notes, setNotes] = useState([]);
+  const [comment, setComment] = useState("");
+  const [writer, setWriter] = useState("");
 
-function toggleShowMore() {
+  function toggleShowMore() {
     setShowMore(!showMore);
+  }
+
+  function toggleShowNotes() {
+    setShowNotes(!showNotes);
   }
 
   function getGoalPercentage(student) {
@@ -23,7 +28,6 @@ function toggleShowMore() {
       return "✅";
     }
   }
-
   function getTrackStatus(student) {
     if (
       student.codewars.current.total > 600 &&
@@ -65,27 +69,50 @@ function toggleShowMore() {
     );
   }
 
-  function addNotes() {
+  function testNotes() {
     return (
-      <form className="notesForm">
-        <label htmlFor="id">ID</label>
-        <input
-          type="text"
-          id="id"
-          value={createNotes}
-          onChange={(e) => setCreateNotes(e.target.value)}
-        ></input>
-        <label htmlFor="comment">Comment</label>
-        <input
-          type="text"
-          id="comment"
-          value={note}
-          onChange={(e) => setNote(e.target.value)}
-        ></input>
-        <button>Submit</button>
-      </form>
+      <>
+        <form onSubmit={handleSubmit} className="notesForm">
+          <label htmlFor="id">ID</label>
+          <input
+            type="text"
+            id="id"
+            value={writer}
+            onChange={(e) => setWriter(e.target.value)}
+          ></input>
+          <label htmlFor="comment">Comment</label>
+          <input
+            type="text"
+            id="comment"
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+          ></input>
+          <button>Submit</button>
+        </form>
+        {getNote.map((note, index) => (
+          <div key={index}>
+            <>
+              {note.writer} says {note.comment}
+            </>
+          </div>
+        ))}
+      </>
     );
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const newNote = {
+      id: id,
+      writer: writer,
+      comment: comment,
+    };
+    setNotes([...notes, newNote]);
+    setWriter("");
+    setComment("");
+  }
+
+  const getNote = notes.filter((note) => note.id === id);
 
   return (
     <div className="student" key={student.id}>
@@ -104,7 +131,7 @@ function toggleShowMore() {
           <span onClick={toggleShowNotes}>
             {!showNotes ? "1-on-1 Notes" : "Hide 1-on-1 Notes"}
           </span>
-          {showNotes ? { addNotes } : null}
+          {showNotes ? <>{testNotes(student)}</> : null}
         </>
       ) : null}
     </div>

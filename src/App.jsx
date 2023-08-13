@@ -9,7 +9,7 @@ function App() {
   const [cohorts, setCohorts] = useState(["All Students"]);
   const [tempCohort, setTempCohort] = useState([...students]);
   const [listTitle, setListTitle] = useState("All Students");
-
+  
   students.forEach((cohort) => {
     if (
       !cohorts.find((cohortSeason) => cohortSeason === cohort.cohort.cohortCode)
@@ -18,6 +18,7 @@ function App() {
     }
   });
 
+  console.log(listTitle);
 
   function filteredCohorts([cohort]) {
     if (cohort) {
@@ -37,6 +38,10 @@ function App() {
   cohorts.sort();
 
   function handleTextChange(e) {}
+
+  function toggleShowNotes() {
+    setShowNotes(!showNotes);
+  }
 
   return (
     <div className="pageLayout">
