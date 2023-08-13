@@ -1,5 +1,5 @@
 import studentsData from "./data/data.json";
-import CohortList from "./components/CohortList"
+import CohortList from "./components/CohortList";
 import StudentList from "./components/StudentList";
 import { useState } from "react";
 import "/App.css";
@@ -9,7 +9,7 @@ function App() {
   const [cohorts, setCohorts] = useState(["All Students"]);
   const [tempCohort, setTempCohort] = useState([...students]);
   const [listTitle, setListTitle] = useState("All Students");
-  
+
   students.forEach((cohort) => {
     if (
       !cohorts.find((cohortSeason) => cohortSeason === cohort.cohort.cohortCode)
@@ -17,8 +17,6 @@ function App() {
       cohorts.push(cohort.cohort.cohortCode);
     }
   });
-
-  console.log(listTitle);
 
   function filteredCohorts([cohort]) {
     if (cohort) {
@@ -36,12 +34,6 @@ function App() {
   }
 
   cohorts.sort();
-
-  function handleTextChange(e) {}
-
-  function toggleShowNotes() {
-    setShowNotes(!showNotes);
-  }
 
   return (
     <div className="pageLayout">
