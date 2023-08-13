@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <div className="dashboard">
-      <header>DashBoard</header>
+      <h1>DashBoard</h1>
       <h1>{cohortTitle}</h1>
       <p className="total-count">Total students: {filteredStudents.length}</p>{/*Display Total Count of Students */}
       <div className="container">
