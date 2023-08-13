@@ -1,6 +1,6 @@
 import React from "react";
 import studentsData from "./data/data.json";
-import CohortList from "./components/CohortList";
+// import CohortList from "./components/CohortList";
 import StudentList from "./components/StudentList";
 import { useState } from "react";
 import "../App.css";
@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="pageLayout">
       <header>Student Dashboard</header>
-      <CohortList cohorts={cohorts} filteredCohorts={filteredCohorts} />
+      {/* <CohortList cohorts={cohorts} filteredCohorts={filteredCohorts} /> */}
       <StudentList
         tempCohort={tempCohort}
         students={students}
