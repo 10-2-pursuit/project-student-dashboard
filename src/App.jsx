@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 import data from "./data/data.json";
 import StudentList from "./components/StudentList";
@@ -8,6 +5,7 @@ import SeasonClass from "./components/SeasonClass";
 
 function App() {
   const [filteredStudents, setFilteredStudents] = useState(data);
+  const [selectedClass, setSelectedClass] = useState("All Students");
 
   const handleAddNote = (studentId, commenterName, comment) => {
     const updatedStudents = filteredStudents.map((student) =>
@@ -18,11 +16,28 @@ function App() {
     setFilteredStudents(updatedStudents);
   };
 
+  const handleClassFilter = (cohortCode) => {
+    const filteredStudents =
+      cohortCode === "All Students"
+        ? data
+        : data.filter((student) => student.cohort.cohortCode === cohortCode);
+    setFilteredStudents(filteredStudents);
+    setSelectedClass(cohortCode);
+  };
+
   return (
     <div className="body">
-      <SeasonClass students={data} setFilteredStudents={setFilteredStudents} />
+      <SeasonClass
+        students={data}
+        setFilteredStudents={setFilteredStudents}
+        handleClassFilter={handleClassFilter}
+      />
 
-      <StudentList students={filteredStudents} handleAddNote={handleAddNote} />
+      <StudentList
+        students={filteredStudents}
+        selectedClass={selectedClass}
+        handleAddNote={handleAddNote}
+      />
     </div>
   );
 }
