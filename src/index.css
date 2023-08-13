@@ -26,14 +26,14 @@ header {
   position: sticky;
   top: 0;
   font-family: cursive;
-  text-decoration: underline;
   font-weight: bold;
+  background-position: center;
 }
-li {
+ul {
   list-style: none;
 }
 .studentcard {
-  background-color: white;
+  background-color: rgb(209, 209, 209);
   min-height: 100px;
   box-shadow: 2px 2px 4px #000;
   border-radius: 10px;
@@ -46,12 +46,13 @@ li {
     "details details";
 }
 .studentcard > img {
-  max-width: 80px;
+  max-width: 150px;
   margin-left: 10px;
 }
 .student-details-container {
   grid-area: studentInfo;
   text-align: right;
+  font-size: larger;
 }
 .detailsOnStudents {
   grid-area: details;
