@@ -1,0 +1,294 @@
+#root{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.studentCard {
+    width: 100%;
+    min-height: 200px;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 10px;
+    padding: 1em;
+    box-sizing: border-box;
+    display:grid;
+    grid-template-areas: "image b_info" "detail detail";
+    margin-top: 1em;
+    padding-right: 5%;
+    transition: 0.2s;
+}
+
+.dark .studentCard{
+    box-shadow: 2px 2px 4px whitesmoke;
+    background-color: rgb(42, 41, 41);
+}
+
+.image img{
+    width: 100px;
+    height: 100px;
+    grid-area: image;
+    display: block;
+    transition: 0.2s;
+}
+
+.detail_open {
+    width: 100%;
+    min-height: 400px;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 10px;
+    padding: 1em;
+    padding-right: 5%;
+    box-sizing: border-box;
+    display:grid;
+    grid-template-areas: "image b_info" "detail detail";
+    transition: 0.2s;
+}
+
+.detail_open .image img{
+    width: 150px;
+    height: 150px;
+    transition: 0.2s;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.brief_info {
+    grid-area: b_info;
+    text-align: right;
+}
+
+.app {
+    display: grid;
+    grid-template-areas: "h h h h" "b b b b" "b b b b" "b b b b";
+}
+
+header {
+    grid-area: h;
+    display: flex;
+    background-color: cadetblue;
+}
+
+.dark header {
+    background-color: rgb(53, 52, 52);
+}
+
+.menu {
+    position:fixed;
+    top:0%;
+    left:0%;
+    background-color: rgb(43, 42, 42);
+    font-size: 4em;
+    color: whitesmoke;
+    transition: 1s;
+}
+
+.dark .menu {
+    background-color: rgb(53, 52, 52);
+}
+
+.cohort_list {
+    background-color: darkgrey;
+    margin: 10px;
+    padding: 10px 30px 10px 10px;
+    line-height: 2em;
+    font-size: 14px;
+}
+
+.cohort_list ul {
+    list-style: none;
+}
+
+/*toggle switch block for dark mode*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+  /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+  /* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.label_darkmode {
+    position: relative;
+    text-align: end;
+    font-size: 14px;
+}
+  
+input:checked + .slider {
+    background-color: #2196F3;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.darkmode_container {
+    padding: 10px;
+}
+/* toggle block end*/
+
+.header {
+    width: 100vmax;
+    text-align: center;
+}
+
+main {
+    grid-area: b;
+    display: grid;
+    grid-template-areas: "left_container right_container";
+}
+
+.main_container {
+    grid-area: right_container;
+    width: 68vw;
+}
+
+.left_container {
+    grid-area: left_container;
+    width: 30vw;
+}
+
+.detail {
+    grid-area: detail;
+    display:grid;
+    grid-template-areas: "track " "cns" "ooo";
+    text-align: center;
+}
+
+.track {
+    grid-area: track;
+    text-align: right;
+}
+
+.certifications_and_score{
+    grid-area: cns;
+    display:inline-flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.one_on_one {
+    grid-area: ooo;
+    text-align: left;
+}
+
+ul {
+    list-style: none;
+}
+
+.on_track {
+    color:green;
+}
+
+.off_track {
+    color: red;
+    font-weight: bolder;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+/* CSS */
+button {
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+  margin-top: 10px;
+
+  background: #6E6D70;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #DFDEDF;
+  touch-action: manipulation;
+}
+
+button:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+
+.ooo_button {
+    margin-left: 5%;
+}
+
+@media only screen and (max-width: 768px) {
+     #root{
+        width: max-content;
+    }
+    
+    .header {
+        height: 10vh;
+    }
+    main {
+        display: grid;
+        grid-template-areas: "left_container" "right_container";
+        width: 100vw;
+        align-content: center;
+    }
+
+    .left_container {
+        width: fit-content;
+        margin: auto;
+    }
+
+    .main_container {
+        width: 120%;
+        margin-left: 15%;
+    }
+
+    .studentCard {
+        width: 100%;
+        padding-right: 5%;
+    }
+}
