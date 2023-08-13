@@ -4,16 +4,13 @@ import StudentList from "./components/studentList";
 import { useState } from "react";
 import "/App.css";
 
-
 function App() {
   const [students, setStudents] = useState(studentsData);
   const [cohorts, setCohorts] = useState(["All Students"]);
-  const [tempCohort, setTempCohort] = useState([...students])
-  const [showMore, setShowMore] = useState(false);
-  const [createNotes, setCreateNotes] = useState("");
-  const [showNotes, setShowNotes] = useState(false);
+  const [tempCohort, setTempCohort] = useState([...students]);
+  const [listTitle, setListTitle] = useState("All Students");
 
- students.forEach((cohort) => {
+  students.forEach((cohort) => {
     if (
       !cohorts.find((cohortSeason) => cohortSeason === cohort.cohort.cohortCode)
     ) {
@@ -21,57 +18,34 @@ function App() {
     }
   });
 
-  console.log(tempCohort)
-
-
-
 
   function filteredCohorts([cohort]) {
-    if(cohort) {
-      const filteredList = students.filter((student) => 
-        student.cohort.cohortCode === cohort
-      )
-      setTempCohort([...filteredList])
+    if (cohort) {
+      const filteredList = students.filter(
+        (student) => student.cohort.cohortCode === cohort
+      );
+      setTempCohort([...filteredList]);
+      setListTitle(cohort);
+      console.log(cohort);
     }
-    if (cohort === "All Students"){
-      setTempCohort([...students])
+    if (cohort === "All Students") {
+      setTempCohort([...students]);
+      setListTitle("All Students");
     }
-   }
+  }
 
   cohorts.sort();
 
-  function handleTextChange(e) {
-    
-  }
-
-  function toggleShowNotes() {
-    setShowNotes(!showNotes)
-  }
-
-  function toggleShowMore() {
-    setShowMore(!showMore);
-  }
+  function handleTextChange(e) {}
 
   return (
     <div className="pageLayout">
       <header>Student Dashboard</header>
-      <CohortList
-        cohorts={cohorts}
-        setCohorts={setCohorts}
-        students={students}
-        filteredCohorts={filteredCohorts}
-        />
+      <CohortList cohorts={cohorts} filteredCohorts={filteredCohorts} />
       <StudentList
         tempCohort={tempCohort}
         students={students}
-        toggleShowMore={toggleShowMore}
-        showMore={showMore}
-        setShowMore={setShowMore}
-        showNotes={showNotes}
-        setShowNotes={setShowNotes}
-        toggleShowNotes={toggleShowNotes}
-        createNotes={createNotes}
-        setCreateNotes={setCreateNotes}
+        listTitle={listTitle}
       />
     </div>
   );

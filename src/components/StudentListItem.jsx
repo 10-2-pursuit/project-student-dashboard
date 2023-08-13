@@ -1,14 +1,15 @@
+import { useState } from "react";
+
 export default function StudentListItem({
-  student,
-  toggleShowMore,
-  showMore,
-  setShowMore,
-  showNotes,
-  setShowNotes,
-  toggleShowNotes,
-  createNotes,
-  setCreateNotes
+  student
 }) {
+    
+const [showMore, setShowMore] = useState(false);
+
+function toggleShowMore() {
+    setShowMore(!showMore);
+  }
+
   function getGoalPercentage(student) {
     return Math.floor(
       (student.codewars.current.total / student.codewars.goal.total) * 100
@@ -25,6 +26,7 @@ export default function StudentListItem({
 
   function getTrackStatus(student) {
     if (
+      student.codewars.current.total > 600 &&
       student.certifications.resume &&
       student.certifications.linkedin &&
       student.certifications.github &&
@@ -63,14 +65,23 @@ export default function StudentListItem({
     );
   }
 
-  function addNotes(student) {
+  function addNotes() {
     return (
       <form className="notesForm">
         <label htmlFor="id">ID</label>
-        <input type="text" id="id"></input>
+        <input
+          type="text"
+          id="id"
+          value={createNotes}
+          onChange={(e) => setCreateNotes(e.target.value)}
+        ></input>
         <label htmlFor="comment">Comment</label>
-        <input type="text" id="comment">
-        </input>
+        <input
+          type="text"
+          id="comment"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        ></input>
         <button>Submit</button>
       </form>
     );
@@ -78,9 +89,7 @@ export default function StudentListItem({
 
   return (
     <div className="student" key={student.id}>
-      <img src={student.profilePhoto} alt="student" />{" "}
-    
-      <h3>{studentName}</h3>
+      <img src={student.profilePhoto} alt="student" /> <h3>{studentName}</h3>
       <div style={{ color: "green" }}>{getTrackStatus(student)}</div>
       <span>{student.username}</span>
       <br></br>
@@ -89,12 +98,15 @@ export default function StudentListItem({
       <span onClick={toggleShowMore}>
         {!showMore ? "Show more..." : "Show less..."}
       </span>
-      {showMore ? <>{getMoreInfo(student)} <br></br>
-      <span onClick={toggleShowNotes}>
-        {!showNotes ? "1-on-1 Notes" : "Hide 1-on-1 Notes"}
-
-      </span></> : null}
-  
+      {showMore ? (
+        <>
+          {getMoreInfo(student)} <br></br>
+          <span onClick={toggleShowNotes}>
+            {!showNotes ? "1-on-1 Notes" : "Hide 1-on-1 Notes"}
+          </span>
+          {showNotes ? { addNotes } : null}
+        </>
+      ) : null}
     </div>
   );
 }

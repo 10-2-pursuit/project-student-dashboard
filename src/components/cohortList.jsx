@@ -1,4 +1,7 @@
-export default function CohortList({ cohorts, setCohorts, students, filteredCohorts}) {
+export default function CohortList({
+  cohorts,
+  filteredCohorts
+}) {
   return (
     <div className="cohortList">
       <ul>
