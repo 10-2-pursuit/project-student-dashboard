@@ -1,7 +1,7 @@
 import React from "react";
 import studentsData from "./data/data.json";
-import CohortList from "./components/CohortList.jsx";
-import StudentList from "./components/StudentList.jsx";
+import CohortList from "./components/CohortList";
+import StudentList from "./components/StudentList";
 import { useState } from "react";
 import "../App.css";
 
