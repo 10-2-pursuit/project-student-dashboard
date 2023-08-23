@@ -1,6 +1,6 @@
 import React from 'react';
 
-function header() {
+function Header() {
     return (
             <span>
               {/* Sidebar content */}
@@ -9,4 +9,4 @@ function header() {
     }
   
   
-export default header;
+export default Header;
